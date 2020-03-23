@@ -1,1 +1,1 @@
-pip heroku local web -f Procfile.windowsweb: gunicorn gettingstarted.wsgi --log-file -
+web: gunicorn gettingstarted.wsgi --log-file -
