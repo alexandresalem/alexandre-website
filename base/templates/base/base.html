@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'base/css/main.css' %}" >
+    <link rel="shortcut icon" href="{% static 'base/assets/site.ico' %}">
+    <title>Alexandre Salem - Developer Portfolio</title>
+  </head>
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+                <div class="col-8">
+                  <a href="../" ><img id="logo-nav" src="{%static 'base/assets/aslogo.png' %}"></a>
+                    <h3 class="display-4">Developer Portfolio</h3>
+                </div>
+                <div class="col-4" id="profile-photo">
+                    <img id="profile-pic" src="{% static 'base/images/me.jpg' %}">
+                </div>
+        </div>
+
+  {% block content %}
+  {% endblock %}
+    </div>
+</body>
+</html>
