@@ -22,15 +22,9 @@ urlpatterns = [
     path("", base.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
-    path('drawnumber/', include('drawnumber.urls')),
-    # path("habitants/", base.views.habitants, name="habitants"),
-    path('habitants/', include('habitants.urls')),
-    # path('gamef1/', include('gamef1.urls')),
-    path('babysize/', include('babysize.urls')),
-
+    path('', include('base.urls')),
 
 ]
 
-
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
