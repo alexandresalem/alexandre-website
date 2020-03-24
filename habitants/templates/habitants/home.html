@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    <div class="row">
+        <div class="col-12" id="habitants-container">
+            <div class="col-7" id="habitants-container">
+
+                <h1 class="display-3">How Many Habitants?</h1>
+                <h3>Rules:</h3>
+                <p>Write the population number, and I'll say which country or/and U.S. city, has the closest population.</p>
+                <form id="habitants-form" method="get" action="result">
+                    <input class="form-control form-control-lg" type="text" placeholder="Write some number..." name="num1" ">
+                    <p style="color:red; visibility:{{display}};">{{placeholder}}</p>
+                    <select name="game-option" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option selected>Countries or US Cities?</option>
+                        <option value="1">World Countries</option>
+                        <option value="2">U.S. Cities</option>
+                        <option value="3">Both</option>
+                     </select>
+                     <input class="btn btn-primary my-1" type="submit" value="Find Country / City">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
