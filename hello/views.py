@@ -18,5 +18,5 @@ def db(request):
 
     return render(request, "db.html", {"greetings": greetings})
 
-def habitants(request):
-    return render(request,'habitants/home.html')
+# def habitants(request):
+#     return render(request,'habitants/home.html')

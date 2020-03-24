@@ -1,12 +1,13 @@
 from django.urls import path, include
 from django.contrib import admin
-from django.conf import settings
-from django.conf.urls.static import static
+# from django.conf import settings
+# from django.conf.urls.static import static
 admin.autodiscover()
 
 import hello.views
 import base.views
-import habitants.views
+
+# import habitants.views
 
 # To add a new path, first import the app:
 # import blog
@@ -21,9 +22,10 @@ urlpatterns = [
     path("", base.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
-    path('habitants/', habitants.views.habitants, name='habitants'),
+    # path("habitants/", base.views.habitants, name="habitants"),
+    path('habitants/', include('habitants.urls')),
 ]
 
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
