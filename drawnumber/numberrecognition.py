@@ -6,7 +6,7 @@ from keras.utils import to_categorical
 from keras.constraints import maxnorm
 from keras.preprocessing.image import ImageDataGenerator
 import tensorflow as tf
-from keras.callbacks import TensorBoard
+
 
 # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
 # sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
@@ -25,8 +25,7 @@ from keras.callbacks import TensorBoard
 # train_labels = train_labels.to_numpy().astype('float32')
 # train_labels = to_categorical(train_labels)
 
-# name = f'Digit-Recognition-CNN-128x2-256-128-{int(time.time())}'
-# tensorboard = TensorBoard(log_dir=f'logs/{name}')
+
 #
 # def build_model():
 #
@@ -64,7 +63,7 @@ from keras.callbacks import TensorBoard
 #         train_labels[:i*num_val_samples],
 #         train_labels[(i + 1) * num_val_samples:]],axis=0)
 #     model = build_model()
-#     history = model.fit(partial_train_features,partial_train_labels,epochs=num_epochs,batch_size=32, validation_data=(val_features,val_labels), callbacks=[tensorboard])
+#     history = model.fit(partial_train_features,partial_train_labels,epochs=num_epochs,batch_size=32, validation_data=(val_features,val_labels))
 #
 #
 #
