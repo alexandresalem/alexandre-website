@@ -1,0 +1,42 @@
+{% extends 'drawnumber/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12" id="habitants-container">
+
+            <h1 class="display-3">Draw a Number</h1>
+            <h3 class="drawnumber_rules">RESULTADO:</h3>
+            <p class="drawnumber_rules">Draw any number from 0 to 9, and hit the button "Guess Number".</p>
+            <div class="col-8" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
+                <canvas id="myCanvas" width="500" height="500" style="border:2px solid black"></canvas>
+                <br /><br />
+                <form id="number-form" method="post" enctype="multipart/form-data" action="result">
+                    {% csrf_token %}
+
+                    <input type="file" name="draw_number"  style="display:block;">
+
+                    <button onclick="javascript:clearArea();return false;" class="btn btn-primary">Clear Area</button>
+                    <button onclick="javascript:SubmitNumber();return false;" class="btn btn-primary">Guess Digit!</button>
+
+                </form>
+<!--                Line width : <select id="selWidth">-->
+<!--                    <option value="1">1</option>-->
+<!--                    <option value="3">3</option>-->
+<!--                    <option value="5">5</option>-->
+<!--                    <option value="7">7</option>-->
+<!--                    <option value="9" selected="selected">9</option>-->
+<!--                    <option value="11">11</option>-->
+<!--                </select>-->
+<!--                Color : <select id="selColor">-->
+<!--                    <option value="black" selected="selected">black</option>-->
+<!--                    <option value="blue">blue</option>-->
+<!--                    <option value="red">red</option>-->
+<!--                    <option value="green">green</option>-->
+<!--                    <option value="yellow">yellow</option>-->
+<!--                    <option value="gray">gray</option>-->
+<!--                </select>-->
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

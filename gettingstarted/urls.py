@@ -24,6 +24,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # path("habitants/", base.views.habitants, name="habitants"),
     path('habitants/', include('habitants.urls')),
+    path('gamef1/', include('gamef1.urls')),
+    path('babysize/', include('babysize.urls')),
+    path('drawnumber/', include('drawnumber.urls')),
+
 ]
 
 

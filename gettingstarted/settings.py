@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     "hello",
     'base',
     'habitants',
+    'babysize',
+    'drawnumber',
+    'countto5',
+    'gamef1',
 ]
 
 MIDDLEWARE = [
