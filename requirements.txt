@@ -6,3 +6,6 @@ bs4
 pandas
 datetime
 matplotlib
+numpy
+keras
+tensorflow
