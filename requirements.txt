@@ -11,4 +11,5 @@ keras
 tensorflow
 regex
 opencv-python
+Pillow
 pybase64
