@@ -4,8 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 admin.autodiscover()
 
-import hello.views
-import base.views
+# import hello.views
+# import base.views
 
 # import habitants.views
 
