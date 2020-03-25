@@ -5,10 +5,8 @@ requests
 bs4
 pandas
 datetime
-matplotlib
 numpy
 keras
-tensorflow
 regex
 opencv-python
 Pillow
