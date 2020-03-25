@@ -40,13 +40,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'django.contrib.humanize',
-    "hello",
+    # "hello",
     'base',
-    # 'habitants',
+    'habitants',
     # 'babysize',
     'drawnumber',
     # 'countto5',
-    'gamef1',
+    # 'gamef1',
 ]
 
 MIDDLEWARE = [
