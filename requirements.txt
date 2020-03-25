@@ -9,7 +9,6 @@ matplotlib
 numpy
 keras
 tensorflow
-base64
-re
-cv2
-os
+regex
+opencv-python
+pybase64
