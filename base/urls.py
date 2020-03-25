@@ -7,10 +7,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index),
+    path('drawnumber/', include('drawnumber.urls')),
     path('habitants/', include('habitants.urls')),
     path('gamef1/', include('gamef1.urls')),
     path('babysize/', include('babysize.urls')),
-    path('drawnumber/', include('drawnumber.urls')),
+
 
 ]
 

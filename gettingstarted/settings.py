@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'babysize',
     'drawnumber',
     # 'countto5',
-    # 'gamef1',
+    'gamef1',
 ]
 
 MIDDLEWARE = [
