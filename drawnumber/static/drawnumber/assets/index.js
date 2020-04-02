@@ -22,5 +22,13 @@ function init() {
     canvas.addEventListener('mousemove', drag, false);
 
 }
+
+import * as tf from '@tensorflow/tfjs';
+
+function loadModelDigit() {
+  return tf.loadModel({% static 'drawnumber/.keras_model/model.json'});
+}
+
 window.addEventListener('load', init, false);
+
 
