@@ -9,17 +9,15 @@
             <p class="drawnumber_rules">Draw any number from 0 to 9, and hit the button "Guess Number".</p>
             <div class="col-8" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
 
-                <canvas id="myCanvas" width="500" height="500" style="border:2px solid black" ></canvas>
-                <br /><br />
-                <form id="number-form" method="post" enctype="multipart/form-data" action="" onsubmit="SubmitNumber();">
-                    {% csrf_token %}
+                <div class="row">
+                    <canvas id="myCanvas" width="500" height="500" style="border:2px solid black" ></canvas>
+                </div>
+                <button id="btnClear" class="btn btn-primary">Clear Area</button>
+                <button id="btnGuess" class="btn btn-primary">Guess Digit</button>
 
-                    <input type="hidden" id="draw_number" name="img">
+<!--                    <button class="btn btn-primary" type="submit">Guess Digit!</button>-->
 
-                    <button onclick="javascript:clearArea();return false;" class="btn btn-primary">Clear Area</button>
-                    <button class="btn btn-primary" type="submit">Guess Digit!</button>
 
-                </form>
 <!--                Line width : <select id="selWidth">-->
 <!--                    <option value="1">1</option>-->
 <!--                    <option value="3">3</option>-->
@@ -39,5 +37,6 @@
             </div>
         </div>
     </div>
+
 
 {% endblock %}
