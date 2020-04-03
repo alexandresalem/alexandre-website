@@ -54,36 +54,36 @@ function clearArea() {
 }
 
 function prepareImage(){
-    let img = new Image();
-    img.onload = function(){
-        context.drawImage(img, 0, 0, 28, 28);
-        data  = context.getImageData(0,0,28,28).data;
-        var input = [];
-        for (var i=0; i < data.length ; i+=4 ) {
-            input.push(data[i+2]/255)
-        }
-        tensor = tf.tensor(input).reshape([1, 28, 28, 1]);
-        return tensor
-    }
-//    photo = document.getElementById('myCanvas')
-//    //convert to tensor
-//    let tensor = tf
-//        .browser.fromPixels(photo)
-//        .resizeBilinear([28,28])
-//        .mean(2)
-//        .expandDims(2)
-//        .expandDims()
-//        .toFloat()
-//
-//     return tensor.div(255.0);
-//    console.log(tensor);
+//    let img = new Image();
+//    img.onload = function(){
+//        context.drawImage(img, 0, 0, 28, 28);
+//        data  = context.getImageData(0,0,28,28).data;
+//        var input = [];
+//        for (var i=0; i < data.length ; i+=4 ) {
+//            input.push(data[i+2]/255)
+//        }
+//        tensor = tf.tensor(input).reshape([1, 28, 28, 1]);
+//        return tensor
+//    }
+    photo = document.getElementById('myCanvas')
+    //convert to tensor
+    let tensor = tf
+        .browser.fromPixels(photo)
+        .resizeBilinear([28,28])
+        .mean(2)
+        .expandDims(2)
+        .expandDims()
+        .toFloat()
+
+     return tensor.div(255.0);
+    console.log(tensor);
 }
 
 
 async function submitNumber(){
     let prediction = await model.predict(prepareImage()).array();
 
-    console.log('Previsão és ' + prediction)
+    console.log('Previsão é ' + prediction)
 
     // get the model's prediction results
     let results = await tf.argMax(prediction).data();
