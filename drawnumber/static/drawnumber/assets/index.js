@@ -83,7 +83,7 @@ function prepareImage(){
 async function submitNumber(){
     let prediction = await model.predict(prepareImage()).array();
 
-    console.log('Previsão é ' + prediction)
+    console.log('Previsão és ' + prediction)
 
     // get the model's prediction results
     let results = await tf.argMax(prediction).data();

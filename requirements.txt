@@ -8,6 +8,5 @@ datetime
 numpy
 keras
 regex
-opencv-python
 Pillow
-pybase64
+

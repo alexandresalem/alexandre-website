@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-import base64
-import re
-import numpy as np
-import cv2
 import os
 
 from django.conf import settings
