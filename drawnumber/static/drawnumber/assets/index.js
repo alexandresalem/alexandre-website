@@ -16,8 +16,17 @@ function initThis() {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
     });
+    $('#myCanvas').touchstart(function (e) {
+        mousePressed = true;
+        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+    });
 
     $('#myCanvas').mousemove(function (e) {
+        if (mousePressed) {
+            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+        }
+    });
+    $('#myCanvas').touchmove(function (e) {
         if (mousePressed) {
             Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
         }
@@ -26,7 +35,14 @@ function initThis() {
     $('#myCanvas').mouseup(function (e) {
         mousePressed = false;
     });
-        $('#myCanvas').mouseleave(function (e) {
+    $('#myCanvas').mouseleave(function (e) {
+        mousePressed = false;
+    });
+
+    $('#myCanvas').touchend(function (e) {
+        mousePressed = false;
+    });
+    $('#myCanvas').touchleave(function (e) {
         mousePressed = false;
     });
 }
