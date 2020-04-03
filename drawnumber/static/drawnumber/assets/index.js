@@ -59,7 +59,7 @@ function prepareImage(){
         context.drawImage(img, 0, 0, 28, 28);
         data  = context.getImageData(0,0,28,28).data;
         var input = [];
-        for (var i=0; i < data.lenght ; i+=4 ) {
+        for (var i=0; i < data.length ; i+=4 ) {
             input.push(data[i+2]/255)
         }
         tensor = tf.tensor(input).reshape([1, 28, 28, 1]);
