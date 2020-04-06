@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     # "hello",
     'base',
     'habitants',
-    # 'babysize',
+    'babysize',
     'drawnumber',
     # 'countto5',
     # 'gamef1',

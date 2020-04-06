@@ -1,0 +1,103 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12" id="habitants-container">
+            <div class="col-8" id="habitants-container">
+
+                <h1 class="display-3">How Big or Small is your Baby?</h1>
+<!--                <h3>Rules:</h3>-->
+<!--                <p>Upload a photo or paste a link URL, and the algorithm will tell you which car is it.</p>-->
+                <form id="babysize-form" method="get" action="result">
+                    {% csrf_token %}
+                    {{ babyform.non_field_errors }}
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+
+                            <div class="form-check form-check-inline" id="inlineGender">
+                                {{ babyform.gender.errors }}
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="inlineMale">Gender</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    {{ babyform.gender }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            {{ babyform.dob.errors }}
+                            <div class="form-check form-check-inline">
+                                <label for="{{ babyform.dob.id_for_label }}">Date of Birth</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                {{ babyform.dob }}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ babyform.dom.errors }}
+                            <div class="form-check form-check-inline">
+                                <label for="{{ babyform.dom.id_for_label }}">Date of Measurement</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                {{ babyform.dom }}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div class="form-check form-check-inline">
+                                {{ babyform.weight.errors }}
+                                {{ babyform.weight.label_tag }}
+                            </div>
+                            <div class="form-check form-check-inline">
+                                {{ babyform.weight }}
+                                {{ babyform.weight_format }}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="form-check form-check-inline">
+                                {{ babyform.height.errors }}
+                                {{ babyform.height.label_tag }}
+                            </div>
+                            <div class="form-check form-check-inline">
+                                {{ babyform.height }}
+                                {{ babyform.height_format }}
+                            </div>
+                        </div>
+                    </div>
+<!--                        <div class="form-group col-md-4">-->
+
+<!--                                <label for="inputHeight">Height</label>-->
+<!--                                <input type="number" class="form-control" id="inputHeight" name="inputHeight">-->
+
+
+<!--                                <div class="form-check form-check-inline">-->
+<!--                                  <input class="form-check-input" type="radio" name="inlineHeightOptions" id="inlineMeter" value="optionMeter">-->
+<!--                                  <label class="form-check-label" for="inlineMeter">Centimeters</label>-->
+<!--                                </div>-->
+<!--                                <div class="form-check form-check-inline">-->
+<!--                                  <input class="form-check-input" type="radio" name="inlineWeightOptions" id="inlineInches" value="optionInches">-->
+<!--                                  <label class="form-check-label" for="inlineInches">Inches</label>-->
+<!--                                </div>-->
+
+<!--                        </div>-->
+
+<!--                    </div>-->
+                      <div class="form-row">
+                          <button class="btn btn-primary my-1" type="submit">See Chart</button>
+
+                      </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
