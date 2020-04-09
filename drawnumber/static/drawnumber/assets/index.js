@@ -12,6 +12,13 @@ function initThis() {
     photo = document.getElementById('myCanvas')
     ctx = photo.getContext("2d");
 
+
+    $('#myCanvas').addEventListener('touchmove',function (e) {
+        mousePressed = true;
+        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+    });
+
+
     $('#myCanvas').mousedown(function (e) {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
@@ -76,7 +83,7 @@ btnClear.addEventListener("click", function() {
 btnGuess.addEventListener("click", function(){
    let prediction = predict()
    buildchart(prediction);
-})
+});
 
 
 // prediction function
