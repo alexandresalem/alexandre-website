@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import BabyForm
 from .babysize import baby_chart
 import pandas as pd
-import matplotlib.pyplot as plt
+
 # Create your views here.
 
 def home(request):

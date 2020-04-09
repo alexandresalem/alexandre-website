@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 import os
+from .forms import NumberForm
+from .models import Number
 
 from django.conf import settings
 
@@ -9,50 +11,16 @@ from django.conf import settings
 
 
 def home(request):
-
-
-    # # form = NumberForm()
-    # # load weights into new model
-    # loaded_model.load_weights(os.path.join(settings.MEDIA_ROOT,'model5.h5')
-    # print("Loaded model from disk")
-
+    context = {}
     # if request.method == 'POST':
-    # image = request.POST['img']
+    #     form = NumberForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
     #
-    # from io import BytesIO
-    # from PIL import Image
     #
-    # image_data = re.sub("^data:image/png;base64,", "", image)
-    # image_data = base64.b64decode(image_data)
-    # output = open('drawnumber/static/drawnumber/assets/output.png', 'wb')
-    # output.write(image_data)
-    # output.close()
+    # form = NumberForm()
     #
-    # try:
-    #     final_image = cv2.imread('drawnumber/static/drawnumber/assets/output.png')
-    #
-    #     final_image = cv2.resize(final_image, (28, 28))
-    #     print('PHOTO OK')
-    # except:
-    #     print("Photo wasn't found")
-    #
-    # final_image = np.array([final_image])
-    #
-    # final_image = final_image.astype(float) / 255
-    #
-    # print('Photo prepared to be run in the model')
-
-
-        #
-        # results = loaded_model.predict(final_image)
-        # print('Rodando modelo em cima da foto salva')
-        # number = np.argmax(results)
-        # print(number)
-        # print('O valor previsto é este')
-
-
-        # context = {}
-
+    # context['form'] = form
 
     return render(request, 'drawnumber/home.html')
 

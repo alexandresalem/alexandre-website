@@ -2,7 +2,7 @@
 const btnClear = document.querySelector("#btnClear");
 const btnGuess = document.querySelector("#btnGuess");
 
-
+let img;
 let mousePressed = false;
 let lastY;
 let lastX;
@@ -52,32 +52,6 @@ function clearArea() {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
 
-function prepareImage(){
-//    let img = new Image();
-//    img.onload = function(){
-//        context.drawImage(img, 0, 0, 28, 28);
-//        data  = context.getImageData(0,0,28,28).data;
-//        var input = [];
-//        for (var i=0; i < data.length ; i+=4 ) {
-//            input.push(data[i+2]/255)
-//        }
-//        tensor = tf.tensor(input).reshape([1, 28, 28, 1]);
-//        return tensor
-//    }
-    photo = document.getElementById('myCanvas')
-    //convert to tensor
-    let tensor = tf
-        .browser.fromPixels(photo)
-        .resizeBilinear([28,28])
-        .mean(2)
-        .expandDims(2)
-        .expandDims()
-        .toFloat()
-
-     return tensor.div(255.0);
-    console.log(tensor);
-}
-
 
 async function submitNumber(){
     let prediction = await model.predict(prepareImage()).array();
@@ -108,6 +82,10 @@ btnGuess.addEventListener("click", function(){
 // prediction function
 function predict() {
 
+    // get image as DataUrl
+    img = photo.toDataURL('image/png');
+    console.log(img);
+//    fillImage();
     // get image from canvas
     let image = ctx.getImageData(0, 0, 250, 250);
 
@@ -121,37 +99,51 @@ function predict() {
 
     // new resized canvas 28x28
     let resized_canvas = document.createElement('canvas');
-    resized_canvas.width = 28;
-    resized_canvas.height = 28;
-    resized_canvas.getContext('2d').scale(0.14, 0.14);
+    resized_canvas.width = 250;
+    resized_canvas.height = 250;
+    resized_canvas.getContext('2d').scale(1, 1);
     resized_canvas.getContext('2d').drawImage(new_canvas, 0, 0);
 
     // uncomment to view the drawn characters
     // document.body.appendChild(resized_canvas);
 
 
-    let image_data = resized_canvas.getContext('2d').getImageData(0, 0, 28, 28);
+    let image_data = resized_canvas.getContext('2d').getImageData(0, 0, 250, 250);
 
-    // change to monochrome
+
+
+//     change to monochrome
     let monodata = [];
-    for (let i = 0, len = image_data.data.length/4; i < len; i += 1) {
-        monodata.push(image_data.data[i * 4 + 3]);
-        monodata.push(0);
-        monodata.push(0);
-        monodata.push(0);
+    for (let i = 0; i < image_data.data.length; i += 4) {
+        monodata.push(image_data.data[i+3]/255);
+//        monodata.push(0);
+//        monodata.push(0);
+//        monodata.push(0);
     }
 
     // create imagedata for tfjs
-    let monoimgdata = new ImageData(new Uint8ClampedArray(monodata), 28, 28);
+//    let imagedata = new ImageData(new Uint8ClampedArray(monodata), 250, 250);
+
+//    resized_canvas.getContext('2d').putImageData(imagedata, 0, 0);
+
+
+        // get image as DataUrl
+//    img = resized_canvas.toDataURL('image/png');
+//    console.log(img);
 
     // get image from pixels of monochromatic image
-    let input = tf.browser.fromPixels(monoimgdata, 1).reshape([1, 28, 28, 1]).cast('float32').div(tf.scalar(255));
+//    let input = tf.browser.fromPixels(imagedata);
+    console.log('Este ó tensor');
+    let input = tf.tensor4d(monodata,[1,250,250,1]);
+    console.log(input);
+//    .reshape([1, 250, 250, 4]).cast('float32').div(tf.scalar(255));
 
     // prediction
     console.log('Prediction started.'); // message
     let predictions = model.predict(input).dataSync(); // prediction
     console.log('Prediction completed.');// message
-    console.log(predictions)
+    console.log(predictions);
+
     return predictions;
 
 }
@@ -201,3 +193,11 @@ function buildchart(predictions) {
         }
     });
 }
+function fillImage(){
+//    let field = document.getElementById('drawing')
+    let fieldcode = document.getElementById('drawingcode')
+//    field.value = 'Oxe'
+    fieldcode.value = img
+    console.log(img)
+}
+
