@@ -36,6 +36,18 @@
   {% endblock %}
     </div>
 <script src="{% static 'gamef1/index.js' %}"></script>
+<script>
 
+    let firstmodel;
+    async function loadModel(){
+        firstmodel = await tf.loadLayersModel('{% static "gamef1/modelsjs/all_teams_ever/model.json" %}');
+        console.log('Modelo Carregado com sucesso');
+    }
+    loadModel();
+
+
+
+
+</script>
 </body>
 </html>

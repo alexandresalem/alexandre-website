@@ -1,23 +1,30 @@
-{% extends 'base/base.html' %}
+{% extends 'gamef1/base.html' %}
 {% load static %}
 
 {% block content %}
 
     <div class="row">
         <div class="col-12" id="habitants-container">
-            <div class="col-7" id="habitants-container">
+
+            <div class="form-group" id="habitants-container">
 
                 <h1 class="display-3">F1 Car Guesser</h1>
                 <h3>Rules:</h3>
                 <p>Upload a photo or paste a link URL, and the algorithm will tell you which car is it.</p>
                 <form id="gamef1-form" method="post">
                     {% csrf_token %}
-                    <input id="image" type="text" name="image" maxlength="100">
-                    <button id="btnGuess" type="submit" class="btn btn-primary">Guess Digit</button>
+                    <input id="imagelink" type="text" name="imagelink" class="form-control input-lg" placeholder="Paste the link to a F1 Car photo (ex: https://www.f1.com/ferrari.jpg)">
+                    <button id="btnGuess" type="submit" class="btn btn-primary btn-lg btn-block">Guess Car!</button>
+
+
 
                 </form>
+                    {% if url %}
+
+                        <img class="img-fluid" id="gamef1-result" src="{{url}}">
+                    {% endif %}
             </div>
         </div>
     </div>
-<script src="{% static 'gamef1/index.js' %}"></script>
+
 {% endblock %}

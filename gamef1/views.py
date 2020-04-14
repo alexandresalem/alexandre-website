@@ -6,16 +6,20 @@ from django.core.files.storage import FileSystemStorage
 
 
 def home(request):
-
+    context = {}
     if request.method == 'POST':
         form = FormulaForm(request.POST)
         if form.is_valid():
             print('VALID')
             form.save()
+            print(form)
+        url = request.POST['imagelink']
+        print(url)
+        context['url'] = url
 
     form = FormulaForm()
-    context = {}
-    context['form'] = form
+
+
     return render(request, 'gamef1/home.html', context)
 
 def result(request):

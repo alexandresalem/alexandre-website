@@ -13,11 +13,6 @@ function initThis() {
     ctx = photo.getContext("2d");
 
 
-    $('#myCanvas').addEventListener('touchmove',function (e) {
-        mousePressed = true;
-        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
-    });
-
 
     $('#myCanvas').mousedown(function (e) {
         mousePressed = true;
@@ -106,16 +101,16 @@ function predict() {
 
     // new resized canvas 28x28
     let resized_canvas = document.createElement('canvas');
-    resized_canvas.width = 250;
-    resized_canvas.height = 250;
-    resized_canvas.getContext('2d').scale(1, 1);
+    resized_canvas.width = 28;
+    resized_canvas.height = 28;
+    resized_canvas.getContext('2d').scale(0.112, 0.112);
     resized_canvas.getContext('2d').drawImage(new_canvas, 0, 0);
 
     // uncomment to view the drawn characters
     // document.body.appendChild(resized_canvas);
 
 
-    let image_data = resized_canvas.getContext('2d').getImageData(0, 0, 250, 250);
+    let image_data = resized_canvas.getContext('2d').getImageData(0, 0, 28, 28);
 
 
 
@@ -141,7 +136,7 @@ function predict() {
     // get image from pixels of monochromatic image
 //    let input = tf.browser.fromPixels(imagedata);
     console.log('Este ó tensor');
-    let input = tf.tensor4d(monodata,[1,250,250,1]);
+    let input = tf.tensor4d(monodata,[1,28,28,1]);
     console.log(input);
 //    .reshape([1, 250, 250, 4]).cast('float32').div(tf.scalar(255));
 

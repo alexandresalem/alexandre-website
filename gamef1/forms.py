@@ -6,4 +6,8 @@ from .models import Formula
 class FormulaForm(forms.ModelForm):
     class Meta:
         model = Formula
-        fields = ['image']
+        fields = ['imagelink']
+
+        help_texts = {
+            'imagelink': 'Group to which this message belongs to',
+        }
