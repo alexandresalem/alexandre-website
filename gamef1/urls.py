@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='gamef1-home'),
-    path('result', views.result, name='gamef1-result'),
 ]
 
 if settings.DEBUG:

@@ -4,26 +4,92 @@
 {% block content %}
 
     <div class="row">
-        <div class="col-12" id="habitants-container">
+        <div class="col" id="habitants-container">
 
-            <div class="form-group" id="habitants-container">
+            <div class="form-group" id="form-container">
 
-                <h1 class="display-3">F1 Car Guesser</h1>
-                <h3>Rules:</h3>
-                <p>Upload a photo or paste a link URL, and the algorithm will tell you which car is it.</p>
+                <h1 class="text-center">F1 Car Guesser</h1>
+                <p class="text-center">Paste a link URL, and the algorithm will tell you which car is it.</p>
                 <form id="gamef1-form" method="post">
                     {% csrf_token %}
+
                     <input id="imagelink" type="text" name="imagelink" class="form-control input-lg" placeholder="Paste the link to a F1 Car photo (ex: https://www.f1.com/ferrari.jpg)">
-                    <button id="btnGuess" type="submit" class="btn btn-primary btn-lg btn-block">Guess Car!</button>
 
-
+                        <button id="btnGuess" type="submit" class="btn btn-primary btn-lg btn-block">Guess Car!</button>
 
                 </form>
-                    {% if url %}
-
-                        <img class="img-fluid" id="gamef1-result" src="{{url}}">
-                    {% endif %}
             </div>
+            <div class="row" id="result-container">
+                {% if url %}
+                <div class="col">
+                    <p>First Guess</p>
+                    <h1 id="first_team">.</h1>
+                    <h3 id="first_chassis">.</h3>
+                </div>
+                <div class="col">
+                    <p>Second Guess (Same Team)</p>
+                    <h1 id="first_team_b">.</h1>
+                    <h3 id="second_chassis">.</h3>
+                </div>
+                <div class="col">
+                    <p>Third Guess (Different Team)</p>
+                    <h1 id="third_team">.</h1>
+                    <h3 id="third_chassis">.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img id="gamef1-result" src="{% static 'gamef1/f1predict.jpg' %}" class="img-fluid mx-auto d-block">
+                    <script>
+                         let image = document.getElementById('gamef1-result');
+                         image.onload = async function htmlpredict(){
+
+                            let f1_array = {{array|safe}};
+                            const folders = await predict(image,f1_array);
+                            console.log(folders);
+
+
+                            let secondmodel;
+                            async function loadSecondModel(folder){
+                                secondmodel = await tf.loadLayersModel(folder);
+                                console.log('Second Model Loaded');
+                                let input = tf.tensor4d(f1_array,[1,50,50,3]);
+                                secondpredictions = secondmodel.predict(input).dataSync();
+                                console.log('Prediction completed.');
+                                const chassis_predictions = secondpredictions.slice().sort();
+
+                                let first_chassis_prediction = chassis_predictions[secondpredictions.length - 1];
+                                let second_chassis_prediction = chassis_predictions[secondpredictions.length - 2];
+
+                                let first_chassis_result = secondpredictions.indexOf(first_chassis_prediction);
+                                let second_chassis_result = secondpredictions.indexOf(second_chassis_prediction);
+
+                                const list = document.getElementById('first_team').innerHTML.replace(' ','_');
+                                document.getElementById('first_chassis').innerHTML = dict[list][first_chassis_result];
+                                document.getElementById('second_chassis').innerHTML = dict[list][second_chassis_result];
+
+                                thirdmodel = await tf.loadLayersModel(folders[1]);
+                                thirdpredictions = thirdmodel.predict(input).dataSync();
+                                console.log(thirdpredictions);
+                                let third_chassis_prediction = thirdpredictions.slice().sort()[thirdpredictions.length - 1];
+                                console.log(third_chassis_prediction);
+                                let third_chassis_result = thirdpredictions.indexOf(third_chassis_prediction);
+                                console.log(third_chassis_result);
+                                const list_b = document.getElementById('third_team').innerHTML.replace(' ','_');
+                                console.log(list_b)
+                                document.getElementById('third_chassis').innerHTML = dict[list_b][third_chassis_result];
+
+
+                            }
+                            loadSecondModel(folders[0]);
+
+                        }
+
+                    </script>
+                    </div>
+                </div>
+                {% endif %}
+
         </div>
     </div>
 

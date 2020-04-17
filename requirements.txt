@@ -9,4 +9,4 @@ numpy
 keras
 regex
 Pillow
-
+open-cv

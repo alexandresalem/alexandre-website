@@ -16,9 +16,17 @@
     <title>Alexandre Salem - Developer Portfolio</title>
   </head>
 <body>
+    <script src="{% static 'gamef1/index.js' %}"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script>
+        let firstmodel;
+        async function loadModel(){
+            firstmodel = await tf.loadLayersModel('{% static "gamef1/modelsjs/all_teams_ever/model.json" %}');
+            console.log('Full Model Loaded');
+        }
 
+    </script>
 
     <div class="container">
         <br>
@@ -35,19 +43,7 @@
   {% block content %}
   {% endblock %}
     </div>
-<script src="{% static 'gamef1/index.js' %}"></script>
-<script>
-
-    let firstmodel;
-    async function loadModel(){
-        firstmodel = await tf.loadLayersModel('{% static "gamef1/modelsjs/all_teams_ever/model.json" %}');
-        console.log('Modelo Carregado com sucesso');
-    }
-    loadModel();
 
 
-
-
-</script>
 </body>
 </html>
