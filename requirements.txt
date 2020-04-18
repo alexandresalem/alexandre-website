@@ -1,6 +1,5 @@
 django
 gunicorn
-django-heroku
 requests
 bs4
 pandas
@@ -9,4 +8,4 @@ numpy
 keras
 regex
 Pillow
-open-cv
+opencv-python
