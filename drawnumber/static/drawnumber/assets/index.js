@@ -11,7 +11,18 @@ let photo;
 function initThis() {
     photo = document.getElementById('myCanvas')
     ctx = photo.getContext("2d");
-
+    $('#myCanvas').touchstart(function (e) {
+        mousePressed = true;
+        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+    });
+    $('#myCanvas').touchmove(function (e) {
+        if (mousePressed) {
+            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+        }
+    });
+    $('#myCanvas').touchend(function (e) {
+        mousePressed = false;
+    });
 
 
     $('#myCanvas').mousedown(function (e) {
