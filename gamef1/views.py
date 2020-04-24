@@ -27,12 +27,12 @@ def home(request):
 
 
             try:
-                ulib.urlretrieve(url, 'f1predict.jpg')
+                ulib.urlretrieve(url, '../../../media/f1predict.jpg')
 
             except:
                 print("Didn't work")
             finally:
-                image = cv2.imread('f1predict.jpg')
+                image = cv2.imread('../../../media/f1predict.jpg')
                 image = cv2.resize(image, (50, 50))
 
                 image_array = np.array(image)
