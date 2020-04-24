@@ -6,8 +6,8 @@ import base64
 import urllib.request as ulib
 import cv2
 import numpy as np
-
-
+import os
+from django.conf import settings
 
 # Create your views here.
 
@@ -25,13 +25,14 @@ def home(request):
 
             urlbase = base64.b64encode(requests.get(url).content)
 
+
             try:
-                ulib.urlretrieve(url, 'gamef1/static/gamef1/f1predict.jpg')
+                ulib.urlretrieve(url, os.path.join(settings.BASE_DIR, 'static/f1predict.jpg'))
 
             except:
                 print("Didn't work")
             finally:
-                image = cv2.imread('gamef1/static/gamef1/f1predict.jpg')
+                image = cv2.imread(os.path.join(settings.BASE_DIR, 'static/f1predict.jpg'))
                 image = cv2.resize(image, (50, 50))
 
                 image_array = np.array(image)
