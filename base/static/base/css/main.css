@@ -16,9 +16,12 @@ body {
 
 .display-4{
     color:white;
-    font-size:16pt;
     float:right;
     padding-right:10%;
+}
+
+#subtitle{
+    font-size:24pt;
 }
 
 #profile-photo{
