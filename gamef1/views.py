@@ -7,8 +7,8 @@ import urllib.request as ulib
 import cv2
 import numpy as np
 from django.core.files.storage import default_storage
-
-
+from django.core.files import File
+import os
 # Create your views here.
 
 
@@ -22,10 +22,14 @@ def home(request):
             urlbase = base64.b64encode(requests.get(url).content)
 
             try:
-                ulib.urlretrieve(url, 'f2predict.jpg')
+                result = ulib.urlretrieve(url)
+                Formula.imagephoto.save(os.path.basename(url),File(result[0]))
+                Formula.save()
+                form.save()
             except:
                 return render(request, 'gamef1/home.html')
             finally:
+
                 image = cv2.imread('f2predict.jpg')
                 image = cv2.resize(image, (50, 50))
 
@@ -40,7 +44,7 @@ def home(request):
                 # print(image_array * 255)
 
             context['urlbase'] = urlbase
-            form.save()
+
     form = FormulaForm()
 
 
