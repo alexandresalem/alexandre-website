@@ -9,7 +9,7 @@
 
             <div class="form-group" id="form-container">
 
-                <h1 class="text-center">F1 Car Guesser</h1>
+                <h1 class="text-center">F1 Machine Learning</h1>
                 <p class="text-center">Paste a link URL, and the algorithm will tell you which car is it.</p>
                 <form id="gamef1-form" method="post">
                     {% csrf_token %}
@@ -40,7 +40,6 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <img id="gamef1-result" src="{% static 'gamef1/f1predict.jpg' %}" class="img-fluid mx-auto d-block">
                     <img id="gamef1-result2" src="{{url}}" class="img-fluid mx-auto d-block">
                     <script>
                          let image = document.getElementById('gamef1-result');
