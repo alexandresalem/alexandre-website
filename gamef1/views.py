@@ -6,9 +6,7 @@ import base64
 import urllib.request as ulib
 import cv2
 import numpy as np
-from django.core.files.storage import default_storage
-from django.core.files import File
-import os
+
 # Create your views here.
 
 
@@ -17,19 +15,21 @@ def home(request):
     if request.method == 'POST':
         form = FormulaForm(request.POST)
         if form.is_valid():
+
+
             url = request.POST['imagelink']
+
             context['url'] = url
+
             urlbase = base64.b64encode(requests.get(url).content)
+            form.save()
 
             try:
-                result = ulib.urlretrieve(url)
-                Formula.imagephoto.save(os.path.basename(url),File(result[0]))
-                Formula.save()
-                form.save()
-            except:
-                return render(request, 'gamef1/home.html')
-            finally:
+                ulib.urlretrieve(url, 'f2predict.jpg')
 
+            except:
+                print("Didn't work")
+            finally:
                 image = cv2.imread('f2predict.jpg')
                 image = cv2.resize(image, (50, 50))
 
