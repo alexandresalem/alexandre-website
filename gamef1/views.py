@@ -14,41 +14,40 @@ def home(request):
     context = {}
     if request.method == 'POST':
         form = FormulaForm(request.POST)
-
         url = request.POST['imagelink']
-
         context['url'] = url
+
 
 
         form.save()
 
-        if form.is_valid():
+        # if form.is_valid():
+        #
+        #     urlbase = base64.b64encode(requests.get(url).content)
+        #
+        #
+        #     try:
+        #         ulib.urlretrieve(url, 'f2predict.jpg')
+        #
+        #     except:
+        #         print("Didn't work")
+        #     finally:
+        #         image = cv2.imread('f2predict.jpg')
+        #         image = cv2.resize(image, (50, 50))
+        #
+        #         image_array = np.array(image)
+        #         image_array = image_array.astype('float32') / 255
+        #         image_array = np.resize(image_array, (7500,))
+        #         list = []
+        #         for i in image_array:
+        #             list.append(i)
+        #         context['array'] = list
+        #         context['folder'] = 'vamos/testar'
+        #         # print(image_array * 255)
+        #
+        #     context['urlbase'] = urlbase
 
-            urlbase = base64.b64encode(requests.get(url).content)
-
-
-            try:
-                ulib.urlretrieve(url, 'f2predict.jpg')
-
-            except:
-                print("Didn't work")
-            finally:
-                image = cv2.imread('f2predict.jpg')
-                image = cv2.resize(image, (50, 50))
-
-                image_array = np.array(image)
-                image_array = image_array.astype('float32') / 255
-                image_array = np.resize(image_array, (7500,))
-                list = []
-                for i in image_array:
-                    list.append(i)
-                context['array'] = list
-                context['folder'] = 'vamos/testar'
-                # print(image_array * 255)
-
-            context['urlbase'] = urlbase
-
-    form = FormulaForm()
+    # form = FormulaForm()
 
 
 
