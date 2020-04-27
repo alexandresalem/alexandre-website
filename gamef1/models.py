@@ -14,7 +14,7 @@ from django.db import models
 
 # Create your models here.
 class Formula(models.Model):
-    imagelink = models.CharField(max_length=100)
+    imagelink = models.CharField(max_length=500)
 
     imagephoto = models.CharField(max_length=100)
 
