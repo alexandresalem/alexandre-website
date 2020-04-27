@@ -20,7 +20,7 @@ import os
 
 def get_remote_image(url):
     result = urllib.urlretrieve(url)
-    return (os.path.basename(url),File(open(result[0])))
+    return File(open(result[0]))
 
 
 # Create your models here.
@@ -30,7 +30,14 @@ class Formula(models.Model):
 
 
     def save(self, *args, **kwargs):
-        self.imagephoto = get_remote_image(self.imagelink)
+        result = urllib.urlretrieve(self.imagelink)
+
+        self.imagephoto.save(
+            os.path.basename(self.imagelink),
+            File(open(result[0]))
+        )
+        self.save()
+
         super(Formula, self).save(*args, **kwargs)
         # do custom stuff
 
