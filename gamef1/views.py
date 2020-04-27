@@ -14,11 +14,9 @@ def home(request):
     context = {}
     if request.method == 'POST':
         form = FormulaForm(request.POST)
-
+        url = request.POST['imagelink']
+        context['url'] = url
         if form.is_valid():
-            url = request.POST['imagelink']
-            context['url'] = url
-
             form.save()
 
         #
@@ -46,8 +44,8 @@ def home(request):
         #
         #     context['urlbase'] = urlbase
 
-    # form = FormulaForm()
-
+    form = FormulaForm()
+    context['form'] = form
 
 
     return render(request, 'gamef1/home.html', context)
