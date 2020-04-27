@@ -14,15 +14,18 @@ def home(request):
     context = {}
     if request.method == 'POST':
         form = FormulaForm(request.POST)
+
+        url = request.POST['imagelink']
+
+        context['url'] = url
+
+
+        form.save()
+
         if form.is_valid():
 
-
-            url = request.POST['imagelink']
-
-            context['url'] = url
-
             urlbase = base64.b64encode(requests.get(url).content)
-            form.save()
+
 
             try:
                 ulib.urlretrieve(url, 'f2predict.jpg')
