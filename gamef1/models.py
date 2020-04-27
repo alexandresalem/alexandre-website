@@ -20,7 +20,7 @@ import os
 
 def get_remote_image(url):
     result = urllib.urlretrieve(url)
-    return File(open(result[0]))
+    return (os.path.basename(url),File(open(result[0])))
 
 
 # Create your models here.
