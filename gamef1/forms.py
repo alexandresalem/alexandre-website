@@ -16,7 +16,8 @@ class FormulaForm(forms.ModelForm):
     #     if commit:
     #         m.save()
     #     return m
-    imagephoto = forms.CharField(required=False)
+    # imagephoto = forms.CharField(required=False)
+    imagephoto = 'TESTEDEGAULT'
     class Meta:
         model = Formula
         fields = ['imagelink','imagephoto']
