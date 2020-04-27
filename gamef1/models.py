@@ -8,18 +8,21 @@ def get_remote_image(url):
     result = urllib.urlretrieve(url)
     return File(open(result[0]))
 
+def test():
+    result = 'Testando'
+    return result
 
 # Create your models here.
 class Formula(models.Model):
     imagelink = models.CharField(max_length=100)
     imagephoto = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.imagelink
-
 
     def save(self, *args, **kwargs):
         # self.imagephoto = get_remote_image(self.imagelink)
-        self.imagephoto = 'Testando'
+        self.imagephoto = test()
         super(Formula, self).save(*args, **kwargs)  # Call the "real" save() method.
 
+
+    def __str__(self):
+        return self.imagelink
