@@ -14,10 +14,12 @@ class Formula(models.Model):
     imagelink = models.CharField(max_length=100)
     imagephoto = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.imagelink
+
+
     def save(self, *args, **kwargs):
         # self.imagephoto = get_remote_image(self.imagelink)
         self.imagephoto = 'Testando'
         super(Formula, self).save(*args, **kwargs)  # Call the "real" save() method.
 
-    def __str__(self):
-        return self.imagelink
