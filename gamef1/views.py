@@ -14,14 +14,13 @@ def home(request):
     context = {}
     if request.method == 'POST':
         form = FormulaForm(request.POST)
-        url = request.POST['imagelink']
-        context['url'] = url
 
+        if form.is_valid():
+            url = request.POST['imagelink']
+            context['url'] = url
 
+            form.save()
 
-        form.save()
-
-        # if form.is_valid():
         #
         #     urlbase = base64.b64encode(requests.get(url).content)
         #
