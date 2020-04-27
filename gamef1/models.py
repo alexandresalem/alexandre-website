@@ -12,7 +12,7 @@ def get_remote_image(url):
 # Create your models here.
 class Formula(models.Model):
     imagelink = models.CharField(max_length=100)
-    imagephoto = models.ImageField(upload_to='images')
+    imagephoto = models.CharField(max_length=100)
 
     def save(self, *args, **kwargs):
         # self.imagephoto = get_remote_image(self.imagelink)
