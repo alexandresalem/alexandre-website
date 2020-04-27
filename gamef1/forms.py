@@ -9,15 +9,9 @@ from .models import Formula
 
 # Create your form
 class FormulaForm(forms.ModelForm):
-    # def save(self, commit=True):
-    #     m = super(FormulaForm, self).save(commit=False)
-    #     # do custom stuff
-    #     self.imagephoto = test()
-    #     if commit:
-    #         m.save()
-    #     return m
-    # imagephoto = forms.CharField(required=False)
-    imagephoto = 'TESTEDEGAULT'
+
+    imagephoto = forms.CharField(required=False)
+
     class Meta:
         model = Formula
         fields = ['imagelink','imagephoto']
