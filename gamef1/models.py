@@ -26,7 +26,7 @@ def get_remote_image(url):
 # Create your models here.
 class Formula(models.Model):
     imagelink = models.CharField(max_length=500)
-    imagephoto = models.CharField()
+    imagephoto = models.CharField(max_length=500)
 
 
     def save(self, *args, **kwargs):
