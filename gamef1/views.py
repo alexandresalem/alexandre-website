@@ -15,7 +15,9 @@ def home(request):
     if request.method == 'POST':
         form = FormulaForm(request.POST)
         url = request.POST['imagelink']
+        photo = request.FILES['imagephoto']
         context['url'] = url
+        context['photo'] = photo
         if form.is_valid():
             form.save()
 
