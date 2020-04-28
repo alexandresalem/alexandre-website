@@ -26,20 +26,14 @@ def get_remote_image(url):
 # Create your models here.
 class Formula(models.Model):
     imagelink = models.CharField(max_length=500)
-    imagephoto = models.ImageField(upload_to='gamef1images')
+    imagephoto = models.CharField()
 
 
     def save(self, *args, **kwargs):
         result = urllib.urlretrieve(self.imagelink)
-
-        self.imagephoto.save(
-            os.path.basename(self.imagelink),
-            File(open(result[0]))
-        )
-        self.save()
-
+        self.imagephoto = result[0]
         super(Formula, self).save(*args, **kwargs)
-        # do custom stuff
+
 
 
     def __str__(self):
