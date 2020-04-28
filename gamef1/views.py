@@ -13,14 +13,22 @@ import numpy as np
 def home(request):
     context = {}
     if request.method == 'POST':
-        form = FormulaForm(request.POST)
+        form = FormulaForm(request.POST, request.FILES)
         url = request.POST['imagelink']
         photo = request.FILES['imagephoto']
         context['url'] = url
         context['photo'] = photo
+        context['form'] = form
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.save()
 
+        context = {
+            'url': url,
+            'photo': photo,
+            'form': form,
+            'instance': instance,
+        }
         #
         #     urlbase = base64.b64encode(requests.get(url).content)
         #
@@ -46,8 +54,6 @@ def home(request):
         #
         #     context['urlbase'] = urlbase
 
-    form = FormulaForm()
-    context['form'] = form
 
 
     return render(request, 'gamef1/home.html', context)

@@ -11,7 +11,7 @@
 
                 <h1 class="text-center">F1 Machine Learning</h1>
                 <p class="text-center">Paste a link URL, and the algorithm will tell you which car is it.</p>
-                <form id="gamef1-form" method="post">
+                <form id="gamef1-form" method="post" action="" enctype="multipart/form-data">
                     {% csrf_token %}
 
                     <input id="imagelink" type="text" name="imagelink" class="form-control input-lg" placeholder="Paste the link to a F1 Car photo (ex: https://www.f1.com/ferrari.jpg)">
@@ -41,8 +41,11 @@
             </div>
             <div class="row">
                 <div class="col">
+                    <p>{{url}}</p>
                     <p>{{photo}}</p>
-                    <img id="gamef1-result2" src="{{photo}}" class="img-fluid mx-auto d-block">
+                    <p>{{form}}</p>
+                    <p>{{instance.imagephoto.url}}</p>
+                    <img id="gamef1-result2" src="{{instance.imagephoto.url}}" class="img-fluid mx-auto d-block">
                     <script>
                          let image = document.getElementById('gamef1-result');
                          image.onload = async function htmlpredict(){
