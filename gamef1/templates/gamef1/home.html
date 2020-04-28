@@ -15,7 +15,7 @@
                     {% csrf_token %}
 
                     <input id="imagelink" type="text" name="imagelink" class="form-control input-lg" placeholder="Paste the link to a F1 Car photo (ex: https://www.f1.com/ferrari.jpg)">
-                    <input id="imagephoto" type="image" name="imagephoto" class="form-control input-lg">
+                    <input id="imagephoto" type="file" name="imagephoto">
 
                     <button id="btnGuess" type="submit" class="btn btn-primary btn-lg btn-block">Guess Car!</button>
 
