@@ -7,4 +7,4 @@ class FormulaForm(forms.ModelForm):
 
     class Meta:
         model = Formula
-        fields = ['f1image']
+        fields = ['f1image', 'f1text']
