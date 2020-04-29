@@ -12,7 +12,7 @@
                 <h1 class="text-center">F1 Machine Learning</h1>
                 <p class="text-center">Paste a link URL, and the algorithm will tell you which car is it.</p>
                 <form id="gamef1-form" method="post" action="" enctype="multipart/form-data">
-                    <div class="form-row align-items-center">
+                    <div class="row justify-content-md-center">
                         <div class="col-auto">
                             {% csrf_token %}
                             <input id="f1image" class="form-control mb-2" type="file" name="f1image">
@@ -25,7 +25,7 @@
             <div class="row" id="result-container">
                 {% if url %}
                 <div class="col">
-                    <p>First Guessa</p>
+                    <p>First Guess</p>
                     <h1 id="first_team">.</h1>
                     <h3 id="first_chassis">.</h3>
                 </div>
