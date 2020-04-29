@@ -1,1 +1,0 @@
-['BMW Sauber F1.06 - 2006' , 'BMW Sauber F1.07 - 2007' , 'BMW Sauber F1.08 - 2008' , 'BMW Sauber F1.09 - 2009']

@@ -1,1 +1,0 @@
-['Surtees TS14 - 1973' , 'Surtees TS16 - 1976' , 'Surtees TS19 - 1978' , 'Surtees TS20 - 1978' , 'Surtees TS7 - 1971' , 'Surtees TS9 - 1973']
