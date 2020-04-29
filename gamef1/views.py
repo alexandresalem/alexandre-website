@@ -6,6 +6,8 @@ import base64
 import urllib.request as ulib
 import cv2
 import numpy as np
+from django.conf import settings
+import os
 
 # Create your views here.
 
@@ -13,22 +15,29 @@ import numpy as np
 def home(request):
     context = {}
     if request.method == 'POST':
-        form = FormulaForm(request.POST, request.FILES)
-        url = request.POST['imagelink']
-        photo = request.FILES['imagephoto']
-        context['url'] = url
-        context['photo'] = photo
-        context['form'] = form
-        if form.is_valid():
-            instance = form.save(commit=False)
-            instance.save()
+        uploaded_file = request.FILES['f1image']
+        fs = FileSystemStorage()
+        name = fs.save(uploaded_file.name, uploaded_file)
+        url = fs.url(name)
 
-        context = {
-            'url': url,
-            'photo': photo,
-            'form': form,
-            'instance': instance,
-        }
+        context['url'] = url
+
+        image = cv2.imread(os.path.join(settings.MEDIA_ROOT, uploaded_file.name))
+        image = cv2.resize(image, (50, 50))
+
+        image_array = np.array(image)
+        image_array = image_array.astype('float32') / 255
+        image_array = np.resize(image_array, (7500,))
+        list = []
+        for i in image_array:
+            list.append(i)
+        context['array'] = list
+
+
+
+        # context['urlbase'] = urlbase
+
+
         #
         #     urlbase = base64.b64encode(requests.get(url).content)
         #
@@ -39,20 +48,7 @@ def home(request):
         #     except:
         #         print("Didn't work")
         #     finally:
-        #         image = cv2.imread('f2predict.jpg')
-        #         image = cv2.resize(image, (50, 50))
-        #
-        #         image_array = np.array(image)
-        #         image_array = image_array.astype('float32') / 255
-        #         image_array = np.resize(image_array, (7500,))
-        #         list = []
-        #         for i in image_array:
-        #             list.append(i)
-        #         context['array'] = list
-        #         context['folder'] = 'vamos/testar'
-        #         # print(image_array * 255)
-        #
-        #     context['urlbase'] = urlbase
+
 
 
 
