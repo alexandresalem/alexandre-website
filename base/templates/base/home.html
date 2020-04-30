@@ -2,83 +2,83 @@
 {% load static %}
 
 {% block content %}
+        <div class="row" id="app-row">
+            <div class="col"><h3 class="text-center" ">Python Developments</h3></div>
+        </div>
 
+        <div class="row" id="app-row">
+            <div class="col" id="app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="../gamef1">Guess the F1 Car</a></h3>
+                <hr>
+                <p class="text-justify">Upload a picture and the algorithm will guess the chassis and constructor's name</p>
+                <div class="thumb">
+                    <a href="../gamef1"><img class="app-thumb" id="app-gamef1" src="{% static 'base/assets/app_gamef1_thumb.jpg' %}"></a>
+                </div>
+
+                    <h4>Skills developed:</h4>
+                    <li>Deep Learning (Image Classification)</li>
+                    <li>Tensorflow and Keras Libraries</li>
+                    <li>Webscrapping (Selenium)</li>
+                    <li>Tensorflow.js (Javascript)</li>
+
+
+            </div>
+            <div class="col" id="app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="../drawnumber">Draw a Number</a></h3>
+                <hr>
+                <p class="text-justify">Draw a number and we'll guess it</p>
+                <a href="../drawnumber"><img class="app-thumb" id="app-number" src="{% static 'base/assets/app_number_thumb.jpg' %}"></a>
+                    <h4>Skills developed:</h4>
+
+                    <li>Deep Learning (Mnist Dataset)</li>
+                    <li>Tensorflow and Keras Libraries</li>
+                    <li>Canvas Manipulation (HTML and Js)</li>
+                    <li>Numpy (Image to Array to Tensor)</li>
+                    <li>Charts.js (Javascript)</li>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="row" id="app-row">
+            <div class="col" id="app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="../babysize">How Big or Small is your Baby?</a></h3>
+                <hr>
+                <p class="text-justify">Check how is your baby's height and weight compared to the average</p>
+                <div class="thumb">
+                    <a href="../babysize"><img class="app-thumb" id="app-babysize" src="{% static 'base/assets/app_babysize_thumb.jpg' %}"></a>
+                </div>
+                    <h4>Skills developed:</h4>
+                    <li>Pandas</li>
+                    <li>Matplotlib (Python) and Charts.js (Javascript)</li>
+                    <li>Django Forms</li>
+            </div>
+            <div class="col" id="app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="../habitants">How many habitants?</a></h3>
+                <hr>
+                <p class="text-justify">Type any number and find out which Country or U.S. City has the closest population</p>
+                <a href="../habitants"><img class="app-thumb" id="app-habitants" src="{% static 'base/assets/app_habitants_thumb.jpg' %}"></a>
+                <h4>Skills developed:</h4>
+
+                    <li>Beautiful Soup</li>
+                    <li>List manipulation</li>
+                    <li>Webscrapping (to download the photos and create the model)</li>
+                    <li>Numpy (to create the model through array batches)</li>
+
+
+            </div>
+        </div>
         <div class="row" id="quote">
             <blockquote class="blockquote text-center">
-                <p class="lead">"Hi, my name is Alexandre2 and I'm a process engineer, borned in Brazil, 35 years ago. In 2019, I've moved to Houston-TX. Over the last months, I've been working in some projects to increase my Python skills and capabilities. </p>
+                <hr>
+                <p class="lead">"Hi, my name is Alexandre and I'm a process engineer, borned in Brazil, 35 years ago. In 2019, I've moved to Houston-TX. Over the last months, I've been working in some projects to increase my Python skills and capabilities. </p>
                 <p class="lead">I've selected some of them to show in my website, as a portfolio. You can click and interact with them. They all come with my github section where the code is presented.</p>
                 <br>
                 <footer class="blockquote-footer">By the way, this website was creating using <cite title="Source Title">Django</cite></footer>
                 <hr>
             </blockquote>
-        </div>
-        <div class="row" id="app-row">
-            <div class="col" id="app-container">
-                <h3 class="title"><a class="text-decoration-none" href="../gamef1">F1 Guessing Game</a></h3>
-                <hr>
-                <div class="thumb">
-                    <a href="../gamef1"><img class="app-thumb" id="app-gamef1" src="{% static 'base/assets/app_gamef1_thumb.jpg' %}"></a>
-                </div>
-                    <p>Upload a picture or a link of a F1 car, and my Deep Learning model will guess the constructor's name</p>
-                    <h4>Skills developed:</h4>
-                    <li>Deep Learning</li>
-                    <li>Keras Library</li>
-                    <li>Webscrapping (to download the photos and create the model)</li>
-                    <li>
-
-                    </li>
-
-
-            </div>
-            <div class="col" id="app-container">
-                <h3 class="title"><a class="text-decoration-none" href="../habitants">How many habitants?</a></h3>
-                <hr>
-                <a href="../habitants"><img class="app-thumb" id="app-habitants" src="{% static 'base/assets/app_habitants_thumb.jpg' %}"></a>
-                <p>Type a number, and we'll tell you, which country has the closest population. Lorem inpusum huihre uehfsi uhfei</p>
-                    <h4>Python skills developed:</h4>
-                <ul class="list-unstyled">
-                    <li>Beautiful Soup</li>
-                    <li>List manipulation</li>
-                    <li>Webscrapping (to download the photos and create the model)</li>
-                    <li>Numpy (to create the model through array batches)</li>
-                </ul>
-
-            </div>
-
-        </div>
-
-
-        <div class="row" id="app-row">
-            <div class="col" id="app-container">
-                <h3 class="title"><a class="text-decoration-none" href="../babysize">How Big or Small is your Baby?</a></h3>
-                <hr>
-                <div class="thumb">
-                    <a href="../babysize"><img class="app-thumb" id="app-babysize" src="{% static 'base/assets/app_babysize_thumb.jpg' %}"></a>
-                </div>
-                    <p>Upload a picture or a link of a F1 car, and my Deep Learning model will guess the constructor's name</p>
-                    <h4>Skills developed:</h4>
-                    <li>Deep Learning</li>
-                    <li>Keras Library</li>
-                    <li>Webscrapping (to download the photos and create the model)</li>
-                    <li>Numpy (to create the model through array batches)</li>
-
-
-            </div>
-            <div class="col" id="app-container">
-                <h3 class="title"><a class="text-decoration-none" href="../drawnumber">Draw a Number</a></h3>
-                <hr>
-                <a href="../drawnumber"><img class="app-thumb" id="app-number" src="{% static 'base/assets/app_number_thumb.jpg' %}"></a>
-                <p>Type a number, and we'll tell you, which country has the closest population. Lorem inpusum huihre uehfsi uhfei</p>
-                    <h4>Python skills developed:</h4>
-                <ul class="list-unstyled">
-                    <li>Beautiful Soup</li>
-                    <li>List manipulation</li>
-                    <li>Webscrapping (to download the photos and create the model)</li>
-                    <li>Numpy (to create the model through array batches)</li>
-                </ul>
-
-            </div>
-
         </div>
 
 
