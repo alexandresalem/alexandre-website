@@ -15,7 +15,7 @@ class Answer(models.Model):
     )
 
 
-    guess = models.CharField(max_length=100)
+    guess = models.CharField(max_length=100, blank=True)
     team = models.CharField(max_length=100, blank=True)
     chassis = models.CharField(max_length=100, blank=True)
     link = models.CharField(max_length=200, blank=True)
