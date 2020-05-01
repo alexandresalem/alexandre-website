@@ -11,21 +11,23 @@ let photo;
 function initThis() {
     photo = document.getElementById('myCanvas')
     ctx = photo.getContext("2d");
-    $('#myCanvas').touchstart(function (e) {
-        e.preventDefault();
-        mousePressed = true;
-        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
-    });
-    $('#myCanvas').touchmove(function (e) {
-        e.preventDefault();
-        if (mousePressed) {
-            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
-        }
-    });
-    $('#myCanvas').touchend(function (e) {
-        e.preventDefault();
-        mousePressed = false;
-    });
+
+    photo.addEventListener
+//    $('#myCanvas').touchstart(function (e) {
+//        e.preventDefault();
+//        mousePressed = true;
+//        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+//    });
+//    $('#myCanvas').touchmove(function (e) {
+//        e.preventDefault();
+//        if (mousePressed) {
+//            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+//        }
+//    });
+//    $('#myCanvas').touchend(function (e) {
+//        e.preventDefault();
+//        mousePressed = false;
+//    });
 
 
     $('#myCanvas').mousedown(function (e) {

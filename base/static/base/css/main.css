@@ -2,6 +2,10 @@ body {
     background-color:#4c4a4a;
 }
 
+#appcontainer{
+    background-color:white;
+}
+
 #logo-nav{
     max-width:100%;
     padding-left:40px;
@@ -32,6 +36,10 @@ body {
     padding-right:35px;
 }
 
+input[type=radio] {
+    width: 25px;
+    height: 25px;
+}
 
 #app-row{
     background-color:white;
