@@ -6,10 +6,6 @@ class Formula(models.Model):
     f1image = models.ImageField(upload_to='gamef1/')
 
 
-    def __str__(self):
-        return self.f1image
-
-
 class Answer(models.Model):
     GUESSES = (
         ('1st', "First"),
