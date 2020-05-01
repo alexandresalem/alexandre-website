@@ -185,7 +185,7 @@ function loadSelectTeams(){
              select_chassis.options[i] = null;
         };
 
-        var options_chassis = dict[select_team.value];
+        var options_chassis = dict[select_team.value.replace(' ','_')];
         console.log(options_chassis);
         console.log(options_chassis.length);
         for(var i = 0; i < options_chassis.length; i++) {
