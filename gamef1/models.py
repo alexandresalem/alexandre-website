@@ -13,10 +13,13 @@ class Answer(models.Model):
         ('2nd', 'Second'),
         ('3rd','Third')
     )
+
+
     guess = models.CharField(max_length=100)
     team = models.CharField(max_length=100, blank=True)
     chassis = models.CharField(max_length=100, blank=True)
     link = models.CharField(max_length=200, blank=True)
+
 
     def __str__(self):
         return self.guess

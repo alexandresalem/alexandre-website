@@ -5,13 +5,13 @@
 {% block content %}
 
     <div class="row" id="app-row">
-        <div class="col"><h3 class="text-center">Guess the F1 Car</h3></div>
+        <div class="col"><h3 id="gamef1-title" class="text-center">Guess the F1 Car</h3></div>
     </div>
-    <div class="row">
+    <div class="row app-gamef1-container" id="app-gamef1-container-1">
         <div class="col"><p class="text-center">Upload a photo, and the algorithm will tell you which car is it.</p></div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="app-gamef1-container-2">
         <div class="col-m text-center">
 
             <form id="gamef1-initial-form" method="post" action="" enctype="multipart/form-data">
@@ -55,6 +55,17 @@
 
     </div>
 
+    <div class="row mt-4">
+        <div class="col text-center">
+            <p>Select the right answer. Use the fields below if needed.</p>
+            <select id="select-team" name="select-team">
+              <option value="Select Construtor">Select Constructor</option>
+            </select>
+            <select id="select-chassis" name="select-chassis">
+              <option value="Select Chassis">Select Chassis</option>
+            </select>
+        </div>
+    </div>
     <div class="row mt-4">
         <div class="col text-center">
             <button id="btnResult" class="btn btn-primary mb-4" type="submit">Submit Answer</button>
@@ -112,21 +123,23 @@
 
                     }
                     loadSecondModel(folders[0]);
-                    btnResult.addEventListener("click", function() {
-                        if(document.getElementById('id_guess_0').checked) {
-                            document.getElementById("chassis").value = document.getElementById("first_chassis").innerHTML;
-                            document.getElementById("team").value = document.getElementById("first_team").innerHTML;
-                        }
-                        else if(document.getElementById('id_guess_1').checked) {
-                            document.getElementById("chassis").value = document.getElementById("second_chassis").innerHTML;
-                            document.getElementById("team").value = document.getElementById("first_team_b").innerHTML;
-                        }
-                        else if(document.getElementById('id_guess_2').checked) {
-                            document.getElementById("chassis").value = document.getElementById("third_chassis").innerHTML;
-                            document.getElementById("team").value = document.getElementById("third_team").innerHTML;
-                        }
+                     id_guess_0.addEventListener("click", function(){
+                         document.getElementById("chassis").value = document.getElementById("first_chassis").innerHTML;
+                         document.getElementById("team").value = document.getElementById("first_team").innerHTML;
 
-                    })
+                    });
+                    id_guess_1.addEventListener("click", function(){
+                         document.getElementById("chassis").value = document.getElementById("second_chassis").innerHTML;
+                         document.getElementById("team").value = document.getElementById("first_team_b").innerHTML;
+
+                    });
+                    id_guess_2.addEventListener("click", function(){
+                         document.getElementById("chassis").value = document.getElementById("third_chassis").innerHTML;
+                         document.getElementById("team").value = document.getElementById("third_team").innerHTML;
+
+                    });
+                    loadSelectTeams();
+
 
                 }
 

@@ -104,8 +104,9 @@ AlphaTauri: ['AlphaTauri AT01 - 2020']
 
 async function predict(image, f1_array){
 
-//    document.getElementById('form-container').style.display = 'none';
 
+    document.getElementById('app-gamef1-container-1').style.display = "none";
+    document.getElementById('app-gamef1-container-2').style.display = "none";
 
 
     let new_canvas = document.createElement('canvas');
@@ -167,5 +168,43 @@ async function predict(image, f1_array){
 };
 
 
+function loadSelectTeams(){
+    let select_team = document.getElementById("select-team");
+    let options = teams.sort();
+    for(var i = 0; i < options.length; i++) {
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select_team.appendChild(el);
+    };
+    let select_chassis = document.getElementById("select-chassis");
+    select_team.addEventListener("click", function(){
+
+        for (i = select_chassis.options.length-1; i >= 1; i--) {
+             select_chassis.options[i] = null;
+        };
+
+        var options_chassis = dict[select_team.value];
+        console.log(options_chassis);
+        console.log(options_chassis.length);
+        for(var i = 0; i < options_chassis.length; i++) {
+        var opt_chassis = options_chassis[i];
+        var el_chassis = document.createElement("option");
+        el_chassis.textContent = opt_chassis;
+        el_chassis.value = opt_chassis;
+        select_chassis.appendChild(el_chassis);
+        };
+        document.getElementById("chassis").value = select_chassis.value;
+        document.getElementById("team").value = select_team.value;
+
+    });
+    select_chassis.addEventListener("click", function(){
+        document.getElementById("chassis").value = select_chassis.value;
+        document.getElementById("team").value = select_team.value;
 
 
+    });
+
+
+};
