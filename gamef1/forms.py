@@ -19,4 +19,4 @@ class AnswerForm(forms.ModelForm):
     guess = forms.CharField(widget=forms.RadioSelect(choices=GUESSES))
     class Meta:
         model = Answer
-        fields = ['guess']
+        fields = ['guess','chassis','team','link']
