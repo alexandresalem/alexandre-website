@@ -164,6 +164,8 @@ async function predict(image, f1_array){
     return [folder, folder_b]
 
 
-}
+};
+
+
 
 
