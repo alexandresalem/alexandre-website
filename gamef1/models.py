@@ -11,11 +11,12 @@ class Answer(models.Model):
     GUESSES = (
         ('1st', "First"),
         ('2nd', 'Second'),
-        ('3rd','Third')
+        ('3rd','Third'),
+        ('4th','Fourth')
     )
 
 
-    guess = models.CharField(max_length=100, blank=True)
+    guess = models.CharField(max_length=100)
     team = models.CharField(max_length=100, blank=True)
     chassis = models.CharField(max_length=100, blank=True)
     link = models.CharField(max_length=200, blank=True)
