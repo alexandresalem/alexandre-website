@@ -3,16 +3,15 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    path('', views.index),
-    path('drawnumber/', include('drawnumber.urls')),
-    path('habitants/', include('habitants.urls')),
-    path('gamef1/', include('gamef1.urls')),
-    path('babysize/', include('babysize.urls')),
-
-
+    path('', views.index, name='home'),
+    path('drawnumber/', include('drawnumber.urls',namespace='drawnumber')),
+    path('habitants/', include('habitants.urls',namespace='habitants')),
+    path('gamef1/', include('gamef1.urls',namespace='gamef1')),
+    path('babysize/', include('babysize.urls',namespace='babysize')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:

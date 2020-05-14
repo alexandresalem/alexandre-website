@@ -2,8 +2,9 @@ body {
     background-color:#4c4a4a;
 }
 
-#appcontainer{
-    background-color:white;
+.app-row{
+    background-color:yellow;
+    padding-top:30px;
 }
 
 #logo-nav{
@@ -46,7 +47,7 @@ input[type=radio] {
     padding-top:30px;
 }
 
-#app-container{
+.app-container{
     margin-left:40px;
     margin-right:40px;
     padding-bottom: 10px;
