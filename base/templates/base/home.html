@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-        <div class="row" id="app-row">
+        <div class="row app-row">
             <div class="col"><h3 class="text-center">Python Developments</h3></div>
         </div>
 
-        <div class="row" id="app-row">
-            <div class="col" id="app-container">
-                <h3 class="title text-center"><a class="text-decoration-none" href="../gamef1">Guess the F1 Car</a></h3>
+        <div class="row app-row">
+            <div class="col app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'gamef1:home' %}">Guess the F1 Car</a></h3>
                 <hr>
                 <p class="text-justify">Upload a picture and the algorithm will guess the chassis and constructor's name</p>
                 <div class="thumb">
-                    <a href="../gamef1"><img class="app-thumb" id="app-gamef1" src="{% static 'base/assets/app_gamef1_thumb.jpg' %}"></a>
+                    <a href="{% url 'gamef1:home' %}"><img class="app-thumb" id="app-gamef1" src="{% static 'base/assets/app_gamef1_thumb.jpg' %}"></a>
                 </div>
 
                     <h4>Skills developed:</h4>
@@ -23,11 +23,11 @@
 
 
             </div>
-            <div class="col" id="app-container">
-                <h3 class="title text-center"><a class="text-decoration-none" href="../drawnumber">Draw a Number</a></h3>
+            <div class="col app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'drawnumber:home' %}">Draw a Number</a></h3>
                 <hr>
                 <p class="text-justify">Draw a number and we'll guess it</p>
-                <a href="../drawnumber"><img class="app-thumb" id="app-number" src="{% static 'base/assets/app_number_thumb.jpg' %}"></a>
+                <a href="{% url 'drawnumber:home' %}"><img class="app-thumb" id="app-number" src="{% static 'base/assets/app_number_thumb.jpg' %}"></a>
                     <h4>Skills developed:</h4>
 
                     <li>Deep Learning (Mnist Dataset)</li>
@@ -42,24 +42,24 @@
         </div>
 
 
-        <div class="row" id="app-row">
-            <div class="col" id="app-container">
-                <h3 class="title text-center"><a class="text-decoration-none" href="../babysize">How Big or Small is your Baby?</a></h3>
+        <div class="row app-row">
+            <div class="col app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'babysize:home' %}">How Big or Small is your Baby?</a></h3>
                 <hr>
                 <p class="text-justify">Check how is your baby's height and weight compared to the average</p>
                 <div class="thumb">
-                    <a href="../babysize"><img class="app-thumb" id="app-babysize" src="{% static 'base/assets/app_babysize_thumb.jpg' %}"></a>
+                    <a href="{% url 'babysize:home' %}"><img class="app-thumb" id="app-babysize" src="{% static 'base/assets/app_babysize_thumb.jpg' %}"></a>
                 </div>
                     <h4>Skills developed:</h4>
                     <li>Pandas</li>
                     <li>Matplotlib (Python) and Charts.js (Javascript)</li>
                     <li>Django Forms</li>
             </div>
-            <div class="col" id="app-container">
-                <h3 class="title text-center"><a class="text-decoration-none" href="../habitants">How many habitants?</a></h3>
+            <div class="col app-container">
+                <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'habitants:home' %}">How many habitants?</a></h3>
                 <hr>
                 <p class="text-justify">Type any number and find out which Country or U.S. City has the closest population</p>
-                <a href="../habitants"><img class="app-thumb" id="app-habitants" src="{% static 'base/assets/app_habitants_thumb.jpg' %}"></a>
+                <a href="{% url 'habitants:home' %}"><img class="app-thumb" id="app-habitants" src="{% static 'base/assets/app_habitants_thumb.jpg' %}"></a>
                 <h4>Skills developed:</h4>
 
                     <li>Beautiful Soup</li>
@@ -70,7 +70,7 @@
 
             </div>
         </div>
-        <div class="row" id="quote">
+        <div class="row app-row" id="quote">
             <blockquote class="blockquote text-center">
                 <hr>
                 <p class="lead">"Hi, my name is Alexandre and I'm a process engineer, borned in Brazil, 35 years ago. In 2019, I've moved to Houston-TX. Over the last months, I've been working in some projects to increase my Python skills and capabilities. </p>

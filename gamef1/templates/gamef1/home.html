@@ -4,14 +4,14 @@
 
 {% block content %}
 
-    <div class="row" id="app-row">
+    <div class="row app-row">
         <div class="col"><h3 id="gamef1-title" class="text-center">Guess the F1 Car</h3></div>
     </div>
-    <div class="row app-gamef1-container" id="app-gamef1-container-1">
+    <div class="row app-gamef1-container app-row" id="app-gamef1-container-1">
         <div class="col"><p class="text-center">Upload a photo, and the algorithm will tell you which car is it.</p></div>
     </div>
 
-    <div class="row justify-content-center" id="app-gamef1-container-2">
+    <div class="row justify-content-center app-row" id="app-gamef1-container-2">
         <div class="col-m text-center">
 
             <form id="gamef1-initial-form" method="post" action="" enctype="multipart/form-data">
@@ -30,7 +30,7 @@
     {% if url %}
     <form id="gamef1-result-form" method="post" action="" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="row" id="result-container">
+    <div class="row app-row" id="result-container">
 
             <div class="col text-center">
                 <h3 class="text-secondary">1st Guess</h3>
