@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4310bdc4-b696-4bd4-b969-38677d37b693" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babysize/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/babysize/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/static/base/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/base/static/base/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/base/templates/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/templates/base/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/base/templates/base/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnumber/templates/drawnumber/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/templates/drawnumber/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnumber/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnumber/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamef1/templates/gamef1/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/templates/gamef1/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/static/gamef1/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/static/gamef1/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gamef1/templates/gamef1/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/templates/gamef1/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamef1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gettingstarted/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gettingstarted/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/habitants/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/habitants/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

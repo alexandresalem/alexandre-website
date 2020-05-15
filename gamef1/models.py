@@ -15,7 +15,6 @@ class Answer(models.Model):
         ('4th','Fourth')
     )
 
-
     guess = models.CharField(max_length=100)
     team = models.CharField(max_length=100, blank=True)
     chassis = models.CharField(max_length=100, blank=True)
