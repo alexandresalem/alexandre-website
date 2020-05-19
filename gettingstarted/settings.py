@@ -27,7 +27,7 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if not os.environ.get('SSH_CLIENT'):
+if os.environ.get('SSH_CLIENT') == None:
     ALLOWED_HOSTS = []
 else:
     ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com']
@@ -87,7 +87,7 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-if not os.environ.get('SSH_CLIENT'):
+if os.environ.get('SSH_CLIENT') == None:
     DATABASES = {
         "default": {
             "ENGINE" : "django.db.backends.sqlite3",
