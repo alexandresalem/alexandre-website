@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4310bdc4-b696-4bd4-b969-38677d37b693" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/base/templates/base/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/static/drawnumber/assets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/static/drawnumber/assets/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnumber/templates/drawnumber/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/templates/drawnumber/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamef1/templates/gamef1/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/templates/gamef1/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gettingstarted/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gettingstarted/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/accounts/templates/accounts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../f1_car_image_classifierr" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
@@ -58,6 +58,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1589514161018">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1589514161018" />
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1589375020775">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -70,9 +74,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1589372835992" />
-    <state x="685" y="466" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1589000670025">
+    <state x="685" y="466" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1589845164462">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="685" y="466" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1589000670025" />
+    <state x="685" y="466" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1589845164462" />
   </component>
 </project>
