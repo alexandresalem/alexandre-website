@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4310bdc4-b696-4bd4-b969-38677d37b693" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.MD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/static/drawnumber/assets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/static/drawnumber/assets/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,10 +67,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="735" y="467" width="449" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1589394114019" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1589372835992">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1589854523727">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1589372835992" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1589854523727" />
     <state x="685" y="466" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1589845164462">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
