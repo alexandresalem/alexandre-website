@@ -179,3 +179,5 @@ h3.drawnumber_rules{
 p.drawnumber_rules{
     text-align: center
 }
+
+#myCanvas{touch-action: none;}

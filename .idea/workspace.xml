@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4310bdc4-b696-4bd4-b969-38677d37b693" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/drawnumber/static/drawnumber/assets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/static/drawnumber/assets/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/static/base/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/base/static/base/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
