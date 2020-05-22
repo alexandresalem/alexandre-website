@@ -176,7 +176,7 @@ function loadSelectTeams(){
     select_team.appendChild(el);
     };
     let select_chassis = document.getElementById("select-chassis");
-    select_team.addEventListener("click", function(){
+    select_team.addEventListener("change", function(){
 
         for (i = select_chassis.options.length-1; i >= 1; i--) {
              select_chassis.options[i] = null;
