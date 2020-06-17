@@ -2,13 +2,13 @@
 {% load static %}
 {% load humanize %}
 {% block content %}
-<div class="row" id="habitants-container">
+<div class="row app-container">
     <div class="col-12">
     <h1 class="display-3">The answer is!</h1>
     </div>
 </div>
-<div class="row" id="habitants-container">
-    <div class="col-6" id="habitants-container" style="display:{{display_countries}};">
+<div class="row app-container">
+    <div class="col-6 app-container" style="display:{{display_countries}};">
         <h2 class="habitants-result-title">Closest Country:</h2>
         <img class="flag" src="{{flag}}" alt="{{country}}">
         <h4>{{country}}</h4>
@@ -16,7 +16,7 @@
         <p class="habitants-result">Population of {{country}}: {{population|intcomma}} habitants.</p>
         <p class="habitants-result">{{country}} is the {{ranking}}º most populous country in the world.</p>
     </div>
-    <div class="col-6" id="habitants-container" style="display:{{display_cities}};">
+    <div class="col-6 app-container" style="display:{{display_cities}};">
         <h2 class="habitants-result-title">Closest US City:</h2>
         <h4>{{city_name}} - {{city_state}}</h4>
         <p class="habitants-result">Your Guess: {{pop|intcomma}}</p>
@@ -25,7 +25,7 @@
     </div>
 
 </div>
-<div class="row" id="habitants-container">
+<div class="row app-container">
     <a style="margin-left:auto; margin-right:auto; text-align:center;padding-bottom:0.7rem;" href="../habitants/">Wanna play again?</a>
 </div>
 {% endblock %}

@@ -17,10 +17,10 @@ HEIGHT = [
     ('inches','Inches')
 ]
 class BabyForm(forms.Form):
-
-    dob = forms.DateField(label='Date of Birth', widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES))
-    dom = forms.DateField(label='Date of Measurement', widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES),initial=datetime.date.today())
     gender = forms.ChoiceField(choices=GENDER)
+    dob = forms.DateField(label='Borned in', widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES))
+    dom = forms.DateField(label='Measured in', widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES),initial=datetime.date.today())
+
 
     weight_format = forms.ChoiceField(choices=WEIGHT, label="Weight's Format")
     weight=forms.IntegerField(label='Weight', initial="Baby's Weight")

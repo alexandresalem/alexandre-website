@@ -60,7 +60,7 @@ March: ['March 701 - 1971', 'March 871 - 1987', 'March 881 - 1989', 'March CG891
 Marussia: ['Marussia MR01 - 2012', 'Marussia MR02 - 2013', 'Marussia MR03 - 2015'],
 Maserati: ['Maserati 4CL and 4CLT - 1952', 'Maserati A6GCM - 1956', 'Maserati 250F - 1960'],
 Matra: ['Matra MS5 - 1967', 'Matra MS7 - 1969', 'Matra MS9 - 1968', 'Matra MS10 - 1969', 'Matra MS11 - 1968', 'Matra MS80 - 1969', 'Matra MS84 - 1969', 'Matra MS120 - 1972'],
-McLaren: ['McLaren M2B - 1966', 'McLaren M4B - 1967', 'McLaren M5A - 1968', 'McLaren M7A - 1971', 'McLaren M9A - 1969', 'McLaren M14A - 1971', 'McLaren M19A - 1973', 'McLaren M23 - 1978', 'McLaren M26 - 1979', 'McLaren M28 - 1979', 'McLaren M29 - 1981', 'McLaren M30 - 1980', 'McLaren MP4 1', 'McLaren MP4 2', 'McLaren MP4 3', 'McLaren MP4 4', 'McLaren MP4 5', 'McLaren MP4 6', 'McLaren MP4 7A', 'McLaren MP4 8', 'McLaren MP4 9', 'McLaren MP4 10', 'McLaren MP4 11', 'McLaren MP4 12', 'McLaren MP4 13', 'McLaren MP4 14', 'McLaren MP4 15', 'McLaren MP4 16', 'McLaren MP4 17', 'McLaren MP4 19', 'McLaren MP4 20', 'McLaren MP4 21', 'McLaren MP4 22', 'McLaren MP4 23', 'McLaren MP4 24', 'McLaren MP4 25', 'McLaren MP4 26', 'McLaren MP4 27', 'McLaren MP4 28', 'McLaren MP4 29', 'McLaren MP4 30', 'McLaren MP4 31', 'McLaren MCL32 - 2017', 'McLaren MCL33 - 2018', 'McLaren MCL34 - 2019', 'McLaren MCL35 - 2020'],
+McLaren: ['McLaren M2B - 1966', 'McLaren M4B - 1967', 'McLaren M5A - 1968', 'McLaren M7A - 1971', 'McLaren M9A - 1969', 'McLaren M14A - 1971', 'McLaren M19A - 1973', 'McLaren M23 - 1978', 'McLaren M26 - 1979', 'McLaren M28 - 1979', 'McLaren M29 - 1981', 'McLaren M30 - 1980', 'McLaren MP4 1 - 1981 to 1983', 'McLaren MP4 2 - 1984 to 1986', 'McLaren MP4 3 - 1987', 'McLaren MP4 4 - 1988', 'McLaren MP4 5 - 1989 and 1990', 'McLaren MP4 6 - 1991', 'McLaren MP4 7A - 1992', 'McLaren MP4 8 - 1993', 'McLaren MP4 9 - 1994', 'McLaren MP4 10 - 1995', 'McLaren MP4 11 - 1996', 'McLaren MP4 12 - 1997', 'McLaren MP4 13 - 1998', 'McLaren MP4 14 - 1999', 'McLaren MP4 15 - 2000', 'McLaren MP4 16 - 2001', 'McLaren MP4 17 - 2002', 'McLaren MP4 19 - 2004', 'McLaren MP4 20 - 2005', 'McLaren MP4 21 - 2006', 'McLaren MP4 22 - 2007', 'McLaren MP4 23 - 2008', 'McLaren MP4 24 - 2009', 'McLaren MP4 25 - 2010', 'McLaren MP4 26 - 2011', 'McLaren MP4 27 - 2012', 'McLaren MP4 28 - 2013', 'McLaren MP4 29 - 2014', 'McLaren MP4 30 - 2015', 'McLaren MP4 31 - 2016', 'McLaren MCL32 - 2017', 'McLaren MCL33 - 2018', 'McLaren MCL34 - 2019', 'McLaren MCL35 - 2020'],
 Mercedes: ['Mercedes Benz W196', 'Mercedes MGP W01 - 2010', 'Mercedes MGP W02 - 2011', 'Mercedes F1 W03 - 2012', 'Mercedes F1 W04 - 2013', 'Mercedes F1 W05 Hybrid - 2014', 'Mercedes F1 W06 Hybrid - 2015', 'Mercedes F1 W07 Hybrid - 2016', 'Mercedes AMG F1 W08 EQ Power - 2017', 'Mercedes AMG F1 W09 EQ Power - 2018', 'Mercedes AMG F1 W10 EQ Power - 2019', 'Mercedes AMG F1 W11 EQ Performance - 2020'],
 Merzario: ['Merzario A2 - 1979', 'Merzario A4 - 1979'],
 Midland: ['Midland M16 - 2006'],
@@ -176,7 +176,7 @@ function loadSelectTeams(){
     select_team.appendChild(el);
     };
     let select_chassis = document.getElementById("select-chassis");
-    select_team.addEventListener("click", function(){
+    select_team.addEventListener("change", function(){
 
         for (i = select_chassis.options.length-1; i >= 1; i--) {
              select_chassis.options[i] = null;

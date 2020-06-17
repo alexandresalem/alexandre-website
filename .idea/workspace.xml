@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4310bdc4-b696-4bd4-b969-38677d37b693" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/base/templates/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnumber/templates/drawnumber/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/templates/drawnumber/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babysize/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/babysize/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babysize/templates/babysize/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/babysize/templates/babysize/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babysize/templates/babysize/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/babysize/templates/babysize/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/static/base/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/base/static/base/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnumber/templates/drawnumber/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/templates/drawnumber/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamef1/templates/gamef1/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/templates/drawnumber/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/templates/drawnumber/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gamef1/templates/gamef1/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/templates/gamef1/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamef1/templates/gamef1/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/templates/gamef1/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gettingstarted/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gettingstarted/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/habitants/templates/habitants/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/habitants/templates/habitants/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/habitants/templates/habitants/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/habitants/templates/habitants/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/base/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/base/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/gamef1/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/gamef1/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,10 +78,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="735" y="467" width="449" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1589394114019" />
-    <state x="649" y="287" width="622" height="532" key="find.popup" timestamp="1590166265883">
+    <state x="649" y="287" width="622" height="532" key="find.popup" timestamp="1591058995043">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="649" y="287" width="622" height="532" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1590166265883" />
+    <state x="649" y="287" width="622" height="532" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1591058995043" />
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1589854523727">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
