@@ -11,7 +11,9 @@ urlpatterns = [
     path('habitants/', include('habitants.urls',namespace='habitants')),
     path('gamef1/', include('gamef1.urls',namespace='gamef1')),
     path('babysize/', include('babysize.urls',namespace='babysize')),
+    path('jpmorgan/', include('jpmorgan.urls',namespace='jpmorgan')),
     path('accounts/', include('accounts.urls')),
+
 ]
 
 if settings.DEBUG:
