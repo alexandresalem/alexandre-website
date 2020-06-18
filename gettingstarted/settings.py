@@ -24,6 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be used, if set, instead)."
 
+DEBUG = False
+
+ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com','127.0.0.1','localhost']
 
 
 
@@ -80,9 +83,6 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DEBUG = False
-
-ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com','127.0.0.1','localhost']
 
 DATABASES = {
     "default": {
