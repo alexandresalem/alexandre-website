@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4310bdc4-b696-4bd4-b969-38677d37b693" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jpmorgan/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/templates/jpmorgan/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpmorgan/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gettingstarted/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gettingstarted/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
