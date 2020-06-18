@@ -26,7 +26,7 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com']
 
 
 
