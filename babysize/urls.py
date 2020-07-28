@@ -5,8 +5,6 @@ from django.conf.urls.static import static
 
 app_name="babysize"
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('result/', views.result, name='result'),
-    path('test/', views.test, name='test'),
-
+    path('', views.BabyFormView.as_view(), name='home'),
+    path('result/', views.BabyResultView.as_view(), name='result'),
 ]
