@@ -5,5 +5,4 @@ static
 media
 .env
 db.sqlite3
-#getting-started/*
 .idea/*
