@@ -28,11 +28,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 DEBUG = bool(int((os.environ.get('DEBUG', 1))))
 
 
-ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
-if ALLOWED_HOSTS_ENV:
-    ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
-# ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com']
+# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
+# if ALLOWED_HOSTS_ENV:
+#     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
+ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com']
 
 
 # Application definition
@@ -88,12 +88,12 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE" : "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE" : "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -107,16 +107,16 @@ DATABASES = {
 # }
 #
 # #
-# DATABASES = {
-#     "default": {
-#         "ENGINE" : "django.db.backends.postgresql_psycopg2",
-#         "NAME": "mydb",
-#         "USER" : "alexandredb",
-#         "PASSWORD" : "abuabu444",
-#         "HOST" : "localhost",
-#         "PORT" : "",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE" : "django.db.backends.postgresql_psycopg2",
+        "NAME": "mydb",
+        "USER" : "alexandredb",
+        "PASSWORD" : "abuabu444",
+        "HOST" : "localhost",
+        "PORT" : "",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
