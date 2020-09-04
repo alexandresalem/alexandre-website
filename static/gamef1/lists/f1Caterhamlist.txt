@@ -1,1 +1,0 @@
-['Caterham CT01 - 2012' , 'Caterham CT03 - 2013' , 'Caterham CT05 - 2014']

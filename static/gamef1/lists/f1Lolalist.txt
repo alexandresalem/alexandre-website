@@ -1,1 +1,0 @@
-['Lola LC87 - 1987' , 'Lola LC88 - 1989' , 'Lola LC89 - 1990' , 'Lola LC90 - 1990' , 'Lola LC91 - 1991' , 'Lola Mk4 - 1963' , 'Lola T370 - 1975' , 'Lola T93-30 - 1993' , 'Lola T97-30 - 1997' , 'Lola THL1 - 1986' , 'Lola THL2 - 1986']
