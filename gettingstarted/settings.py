@@ -25,14 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int((os.environ.get('DEBUG', 1))))
+DEBUG = bool(int((os.environ.get('DEBUG', 0))))
 
 #
-# ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
-# if ALLOWED_HOSTS_ENV:
-#     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
-ALLOWED_HOSTS = ['45.132.242.38','alexandresalem.com']
+ALLOWED_HOSTS = ['*'] if DEBUG else ALLOWED_HOSTS = ['45.132.242.38', 'alexandresalem.com']
 
 
 # Application definition
@@ -88,35 +84,27 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE" : "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
-#     }
-# }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'db',
-#         'PORT': 5432,
-#     }
-# }
-#
-# #
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "mydb",
-        "USER": "alexandredb",
-        "PASSWORD": "abuabu444",
-        "HOST": "localhost",
-        "PORT": "",
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE" : "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": "mydb",
+            "USER": "alexandredb",
+            "PASSWORD": "abuabu444",
+            "HOST": "localhost",
+            "PORT": "",
+        }
+    }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -135,19 +123,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
