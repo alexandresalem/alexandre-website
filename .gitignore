@@ -1,6 +1,5 @@
-staticfiles
-static
-media
+static/
+media/
 .env
 db.sqlite3
 .idea/
