@@ -28,7 +28,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 DEBUG = bool(int((os.environ.get('DEBUG', 0))))
 
 #
-ALLOWED_HOSTS = ['*'] if DEBUG else ALLOWED_HOSTS = ['45.132.242.38', 'alexandresalem.com']
+ALLOWED_HOSTS = ['*']
+if DEBUG:
+    ALLOWED_HOSTS.append(['45.132.242.38', 'alexandresalem.com'])
 
 
 # Application definition
