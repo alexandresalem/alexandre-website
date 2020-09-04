@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-
+AUTH_USER_MODEL = 'kineret.MyUser'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -45,13 +45,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'django.contrib.humanize',
-    'accounts',
     'base',
     'habitants',
     'babysize',
     'drawnumber',
     'jpmorgan',
     'gamef1',
+    'kineret',
 ]
 
 MIDDLEWARE = [
@@ -94,7 +94,19 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'db',
+#         'PORT': 5432,
+#     }
+# }
 #
+# #
 # DATABASES = {
 #     "default": {
 #         "ENGINE" : "django.db.backends.postgresql_psycopg2",
@@ -137,9 +149,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 
-STATIC_URL = "/static/static/"
-STATIC_ROOT = "/vol/web/static"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_URL = "/static/media/"
-MEDIA_ROOT = "/vol/web/media"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+STRIPE_API_KEY = "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ"

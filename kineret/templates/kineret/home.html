@@ -1,0 +1,23 @@
+{% extends 'kineret/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row kineret" style="background-color: #b17027">
+
+                <img class="col" src="{% static 'kineret/home-todos.jpeg' %}">
+
+        </div>
+        <div class="row kineret" style="background-color: #997b9c">
+
+                <img class="col w-2" src="{% static 'kineret/home-horarios.png' %}">
+
+        </div>
+        <div class="row kineret" style="background-color: #602e5d">
+            <div class="col text-center" style="height:300px">
+                <h2 class="mx-auto my-auto text-warning">HORARIOS</h2>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

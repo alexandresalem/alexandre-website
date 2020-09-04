@@ -1,11 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4310bdc4-b696-4bd4-b969-38677d37b693" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/migrations/0002_auto_20200830_1747.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templates/kineret/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templates/kineret/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templates/kineret/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templates/kineret/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templates/kineret/payment-success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templates/kineret/payment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templates/kineret/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/templatetags/addcss.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kineret/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/alexandre-website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alexandre-website.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/kineret/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/kineret/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/kineret/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/kineret/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/kineret/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-deploy.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/drawnumber/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/migrations/0002_delete_number.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/migrations/0003_number.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/migrations/0004_auto_20200406_2324.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/migrations/0005_auto_20200406_2338.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/migrations/0006_remove_number_drawingcode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnumber/migrations/0007_auto_20200407_0020.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/gamef1/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0002_gamephoto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0003_auto_20200305_1033.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0004_classification.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0005_delete_classification.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0006_f1model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0007_auto_20200406_2115.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0008_auto_20200406_2127.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0009_remove_f1model_f1text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0010_auto_20200406_2142.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0011_auto_20200406_2200.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0012_auto_20200412_2245.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0013_formula_imagephoto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0014_auto_20200428_1829.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0015_auto_20200428_2009.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0016_answer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0016_formula_f1text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0017_auto_20200430_2210.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0017_merge_20200501_0203.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0018_remove_formula_f1text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0019_merge_20200501_0325.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0020_auto_20200501_0634.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamef1/migrations/0021_auto_20200501_0638.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gettingstarted/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gettingstarted/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +99,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -23,23 +107,37 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bgWXtw5xoMNs2HFWF8uKormNMX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../docker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../restapi" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="alexandre-website" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="alexandre-website" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/kineret/templates/kineret" />
       <recent name="$PROJECT_DIR$/jpmorgan/templates/jpmorgan" />
       <recent name="$PROJECT_DIR$/accounts/templates/accounts" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
@@ -63,40 +161,73 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/alexandre-website" />
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="646" y="354" width="618" height="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595819867711">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="565" y="356" width="586" height="412" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598838512523">
+      <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state x="646" y="354" width="618" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1595819867711" />
-    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595809622779">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="565" y="356" width="586" height="412" key="#com.intellij.fileTypes.FileTypeChooser/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598838512523" />
+    <state x="573" y="303" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598808473917">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state x="573" y="303" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598808473917" />
+    <state x="650" y="313" width="424" height="491" key="FileChooserDialogImpl" timestamp="1599096550672">
+      <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1595809622779" />
-    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1589375020775">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="650" y="313" width="424" height="491" key="FileChooserDialogImpl/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1599096550672" />
+    <state x="573" y="227" width="523" height="662" key="RollbackChangesDialog" timestamp="1598147662430">
+      <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1589375020775" />
+    <state x="573" y="227" width="523" height="662" key="RollbackChangesDialog/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598147662430" />
+    <state x="393" y="191" width="900" height="737" key="SettingsEditor" timestamp="1597815428704">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state x="393" y="191" width="900" height="737" key="SettingsEditor/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1597815428704" />
     <state x="100" y="127" width="1720" height="853" key="VCS.FileHistoryDialog" timestamp="1595908513451">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="100" y="127" width="1720" height="853" key="VCS.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1595908513451" />
-    <state x="735" y="467" width="449" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589394114019">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="100" y="130" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598809561591">
+      <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state x="735" y="467" width="449" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1589394114019" />
-    <state x="455" y="287" width="1166" height="536" key="find.popup" timestamp="1595908501287">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="100" y="130" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598809561591" />
+    <state x="454" y="226" width="762" height="665" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597641938397">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state x="454" y="226" width="762" height="665" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1597641938397" />
+    <state x="643" y="469" width="430" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597799353545">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state x="643" y="469" width="430" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1597799353545" />
+    <state x="398" y="289" width="1021" height="536" key="find.popup" timestamp="1598808545451">
+      <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state x="455" y="287" width="1166" height="536" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1595908501287" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1595809746745">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="398" y="289" width="1021" height="536" key="find.popup/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598808545451" />
+    <state x="545" y="261" width="672" height="677" key="search.everywhere.popup" timestamp="1599000831322">
+      <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1595809746745" />
+    <state x="545" y="261" width="672" height="677" key="search.everywhere.popup/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1599000831322" />
     <state x="685" y="466" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1595810501924">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

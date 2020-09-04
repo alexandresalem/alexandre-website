@@ -1,0 +1,36 @@
+{% load static addcss %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background:#440740">
+
+
+            <div class="card mt-5 mx-auto border-warning rounded-5" style="width: 18rem; background:#440740">
+                <img src="{% static 'kineret/logo_kineret.jpg' %}" style="width:85%" class="card-img-top mx-auto mt-4">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group">
+                                {{ field|addcss:"form-control" }}
+                            </div>
+                        {% endfor %}
+
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-warning mt-3 text-center" value="Entrar">
+                        </div>
+                        <div class="text-center">
+                            <p class="text-warning mt-3">Não possui login? Clique <a class="text-white" href="{% url 'kineret:register' %}">aqui</a>!</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+</body>
+</html>

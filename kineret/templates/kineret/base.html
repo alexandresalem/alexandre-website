@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'kineret/kineret.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Instituto Kineret</title>
+</head>
+<body>
+<script src="https://js.stripe.com/v3/"></script>
+<nav class="navbar fixed-top flex-md-nowrap p-0 shadow">
+    <img src="{% static 'kineret/logo_kineret.jpg' %}" class="navbar-logo">
+    {% if user %}
+        <p class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">{{ user.first_name|capfirst }}, seja bem-vindo ao Kineret!</p>
+    {% else %}
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Aulas</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Horários</a>
+            </li>
+        </ul>
+    {% endif %}
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            {% if user %}
+                <a class="nav-link" href="{% url 'kineret:logout' %}">Sign out</a>
+            {% else %}
+                <a class="nav-link" href="{% url 'kineret:dashboard' %}">Área do Aluno</a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
