@@ -1,57 +1,37 @@
-from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.views.generic import CreateView, UpdateView
+
 from .forms import *
-from django.core.files.storage import FileSystemStorage
-import requests
-import base64
-import urllib.request as ulib
-import cv2
-import numpy as np
-from django.conf import settings
-import os
-
-# Create your views here.
+from .tasks import predict
 
 
-def home(request):
-    context = {}
+class F1PredictionView(CreateView):
+    model = F1Prediction
+    fields = ['image']
+    template_name = 'gamef1/home.html'
 
-    global list
-    if request.method == 'POST':
-        print('ACESSANDO POST')
-        initial_form = FormulaForm(request.FILES)
-        result_form = AnswerForm(request.POST)
-        if result_form.is_valid():
-            result_form.save()
-        else:
-            try:
-                uploaded_file = request.FILES['f1image']
-                fs = FileSystemStorage()
-                name = fs.save(uploaded_file.name, uploaded_file)
-                url = fs.url(name)
-                context['url'] = url
-                print(url)
+    def get_success_url(self):
+        return reverse('gamef1:result',
+                       kwargs={'pk': self.object.pk})
 
 
-                image = cv2.imread(os.path.join(settings.MEDIA_ROOT, uploaded_file.name))
-                image = cv2.resize(image, (50, 50))
-                image_array = np.array(image)
-                image_array = image_array.astype('float32') / 255
-                image_array = np.resize(image_array, (7500,))
+class F1PredictionResultView(UpdateView):
+    model = F1Prediction
+    form_class = F1PredictionResultForm
+    template_name = 'gamef1/result.html'
 
-                list = []
-                for i in image_array:
-                    list.append(i)
-                context['array'] = list
-            except:
-                pass
-    else:
-        initial_form = FormulaForm()
-        result_form = AnswerForm()
+    def form_valid(self, form, **kwargs):
+        for result in ['sub_first', 'sub_second', 'sub_third']:
+            if result in self.request.POST:
+                form.instance.constructor = self.get_context_data().get(result.split('_')[1])[0]
+        return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        kwargs.update(predict(self.object.image))
+        context = super().get_context_data(**kwargs)
+        context.update(predict(self.object.image))
+        return context
 
-
-    context['initial_form'] = initial_form
-    context['result_form'] = result_form
-
-    return render(request, 'gamef1/home.html', context)
+    def get_success_url(self):
+        return reverse('gamef1:home')
 

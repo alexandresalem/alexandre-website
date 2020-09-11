@@ -1,6 +1,13 @@
 from django.contrib import admin
-from .models import Formula, Answer
+from .models import F1Prediction, Constructor
 # Register your models here.
 
-admin.site.register(Answer)
-admin.site.register(Formula)
+
+@admin.register(F1Prediction)
+class F1GuesserAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Constructor)
+class ConstructorAdmin(admin.ModelAdmin):
+    pass

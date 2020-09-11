@@ -1,19 +1,49 @@
-<!--{% extends 'base/base.html' %}-->
-<!--{% load static %}-->
+{% extends 'base/base.html' %}
+{% load static addcss %}
 
-<!--{% block content %}-->
-<!--<div class="row" id="habitants-container">-->
-<!--    <div class="col-12">-->
-<!--    <h1 class="display-3">F1 Game Result!</h1>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<div class="row" id="habitants-container">-->
+{% block content %}
 
-<!--    <div class="col-12">-->
-<!--    {% if url %}-->
+    <div class="row app-row">
+        <div class="col"><h3 id="gamef1-title" class="text-center">The car is a {{first.0}}!</h3></div>
+    </div>
+    <div class="row app-gamef1-container app-row pb-5" id="app-gamef1-container-1">
+        <div class="col-7">
+            <img class="col" src="{{object.image.url}}">
+        </div>
+        <div class="col-5 pt-3">
+            <form id="gamef1-initial-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form}}
 
-<!--    <img id="gamef1-result" src="{{url}}">-->
-<!--    {% endif %}-->
-<!--    </div>-->
-<!--</div>-->
-<!--{% endblock %}-->
+            <p class="text-center pb-2">Select the right answer:</p>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th class="align-middle" scope="row"><img style="height:50px" src="{% static 'gamef1/assets/gold.png' %}"></th>
+                    <td class="align-middle">{{first.0}}</td>
+                    <td class="align-middle">{{first.1}}%</td>
+                    <td class="align-middle"><button class="btn btn-primary" name="sub_first" type="submit">✓</button></td>
+                </tr>
+                <tr>
+                    <th scope="row"><img style="height:35px" src="{% static 'gamef1/assets/silver.png' %}"></th>
+                    <td class="align-middle">{{second.0}}</td>
+                    <td class="align-middle">{{second.1}}%</td>
+                    <td class="align-middle"><button class="btn btn-primary" name="sub_second" type="submit">✓</button></td>
+                </tr>
+                <tr>
+                    <th scope="row"><img style="height:20px" src="{% static 'gamef1/assets/bronze.png' %}"></th>
+                    <td class="align-middle">{{third.0}}</td>
+                    <td class="align-middle">{{third.1}}%</td>
+                    <td class="align-middle"><button formmethod="post" class="btn btn-primary" name="sub_third" type="submit">✓</button></td>
+                </tr>
+                </tbody>
+            </table>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

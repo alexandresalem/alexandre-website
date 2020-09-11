@@ -1,1 +1,0 @@
-['Alfa Romeo 158-159 Alfetta - 1951' , 'Alfa Romeo 177 - 1979' , 'Alfa Romeo 179 - 1982' , 'Alfa Romeo 182 - 1982' , 'Alfa Romeo 183T - 1983' , 'Alfa Romeo 184T - 1985' , 'Alfa Romeo 185T - 1985' , 'Alfa Romeo Racing C38 - 2019' , 'Alfa Romeo Racing C39 - 2020']

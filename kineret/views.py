@@ -58,18 +58,14 @@ class KineretPayment(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         user = self.request.user
         context = {'user': user}
-
-
         return context
 
     def form_valid(self, form):
-        import ipdb; ipdb.set_trace()
+
         stripe.Customer.create(
             email=self.request.user.email,
             name=self.request.user.first_name,
             api_key='sk_test_51HMlyrFHy6lOMvj4NRbkApGcVzDeCrntahWCiDx0CyQ1IkgHThq1Uq1QYu8n36LevzNw3nCTCeyJCisgbiMUptts00S7mc8VNU')
-
-
 
 
 class KineretPaymentSuccess(LoginRequiredMixin, TemplateView):

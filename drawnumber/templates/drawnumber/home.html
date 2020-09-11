@@ -12,36 +12,33 @@
 
 
 {% block content %}
-    <div class="row">
-        <div class="col app-container">
-
+    <div class="row bg-light">
+        <div class="col">
             <h1 class="display-3">Draw a Number</h1>
-            <h3 class="drawnumber_rules">Rules:</h3>
             <p class="drawnumber_rules">Draw any number from 0 to 9, and hit the button "Guess Number".</p>
-            <div class="col" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
-
-                <div class="col" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
+        </div>
+    </div>
+    <div class="row bg-light">
+        <div class="col" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
+            <div class="row pt-5">
+                <div class="col">
                     <canvas id="myCanvas" width="250" height="250" style="border:2px solid black" ></canvas>
                 </div>
-                <div class="col" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
-<!--                    <form id="canvas-form" method="post">-->
-<!--                         {% csrf_token %}-->
-<!--                        <input id="drawing" type="text" name="drawing">-->
-<!--                        <input id="drawingcode" type="text" name="drawingcode">-->
-                        <button id="btnClear" class="btn btn-primary">Clear Area</button>
-<!--                        <button id="btnGuess" type="submit" class="btn btn-primary">Guess Digit</button>-->
-                        <button id="btnGuess" class="btn btn-primary">Guess Digit</button>
-<!--                    </form>-->
-                </div>
-
-
             </div>
-
-            <div class="col" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
-                <h4>Predictions</h4>
-                <hr>
-                <!-- predictions chart -->
-                <canvas id="prediction_chart"></canvas>
+            <div class="row pt-2 pb-5">
+                <div class="col">
+                    <button id="btnClear" class="btn btn-primary">Clear Area</button>
+                    <button id="btnGuess" class="btn btn-primary">Guess Digit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-light">
+        <div class="col" style="display:block; text-align:center; margin-left:auto; margin-right:auto">
+            <div class="row pt-4">
+                <div class="col text-left text-success">
+                    <canvas id="prediction_chart"></canvas>
+                </div>
             </div>
         </div>
     </div>
