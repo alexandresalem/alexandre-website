@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import F1Prediction, Constructor
+from .models import F1Prediction, Chassis
 # Register your models here.
 
 
@@ -8,6 +8,7 @@ class F1GuesserAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Constructor)
-class ConstructorAdmin(admin.ModelAdmin):
+@admin.register(Chassis)
+class ChassisAdmin(admin.ModelAdmin):
+    list_display = ('chassis', 'constructor')
     pass

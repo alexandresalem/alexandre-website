@@ -11,6 +11,8 @@ class F1Prediction(models.Model):
     chassis = models.CharField(max_length=50, blank=True)
     constructor = models.CharField(max_length=50, blank=True)
     season = models.CharField(max_length=4, blank=True)
+    probability = models.FloatField(blank=True, null=True)
+    position = models.PositiveIntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.image.name
@@ -25,8 +27,12 @@ class F1Prediction(models.Model):
         return storage.path(self.get_absolute_image_url)
 
 
-class Constructor(models.Model):
+class Chassis(models.Model):
+    chassis = models.CharField(max_length=50)
     constructor = models.CharField(max_length=50, blank=True)
+    chassis_fullname = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.constructor
+        return f'{self.constructor} - {self.chassis}'
+
+
