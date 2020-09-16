@@ -15,6 +15,7 @@ import os
 AUTH_USER_MODEL = 'kineret.MyUser'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -147,10 +148,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, "alexandre-website", "static")
 
+print(STATIC_ROOT)
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "alexandre-website", "media")
 
 STRIPE_API_KEY = "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ"
 
