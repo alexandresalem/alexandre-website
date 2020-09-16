@@ -8,7 +8,7 @@
         - static_data:/vol/web
       environment:
         - SECRET_KEY=samplesecretkey123
-        - ALLOWED_HOSTS=127.0.0.1,localhost
+        - ALLOWED_HOSTS=45.132.242.38,alexandresalem.com
     proxy:
       build:
         context: ./proxy

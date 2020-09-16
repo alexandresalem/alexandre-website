@@ -96,27 +96,27 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
-    }
-}
-
 # DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql_psycopg2",
-#         "NAME": "mydb",
-#         "USER": "alexandredb",
-#         "PASSWORD": "abuabu444",
-#         "HOST": "localhost",
-#         "PORT": "",
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'db',
+#         'PORT': 5432,
 #     }
 # }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "mydb",
+        "USER": "alexandredb",
+        "PASSWORD": "abuabu444",
+        "HOST": "localhost",
+        "PORT": "",
+    }
+}
 
 
 
