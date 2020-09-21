@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-        <div class="row app-row">
+        <div class="row bg-light py-4">
             <div class="col"><h3 class="text-center">Python Developments</h3></div>
         </div>
 
-        <div class="row app-row">
-            <div class="col app-container">
+        <div class="row bg-light">
+            <div class="col">
                 <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'gamef1:home' %}">Guess the F1 Car</a></h3>
                 <hr>
                 <p class="text-justify">Upload a picture and the algorithm will guess the chassis and constructor's name</p>
@@ -23,7 +23,7 @@
 
 
             </div>
-            <div class="col app-container">
+            <div class="col">
                 <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'drawnumber:home' %}">Draw a Number</a></h3>
                 <hr>
                 <p class="text-justify">Draw a number and we'll guess it</p>
@@ -42,8 +42,8 @@
         </div>
 
 
-        <div class="row app-row">
-            <div class="col app-container">
+        <div class="row .bg-light">
+            <div class="col">
                 <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'babysize:home' %}">How Big or Small is your Baby?</a></h3>
                 <hr>
                 <p class="text-justify">Check how is your baby's height and weight compared to the average</p>
@@ -55,7 +55,7 @@
                     <li>Matplotlib (Python) and Charts.js (Javascript)</li>
                     <li>Django Forms</li>
             </div>
-            <div class="col app-container">
+            <div class="col">
                 <h3 class="title text-center"><a class="text-decoration-none" href="{% url 'habitants:home' %}">How many habitants?</a></h3>
                 <hr>
                 <p class="text-justify">Type any number and find out which Country or U.S. City has the closest population</p>
@@ -70,7 +70,7 @@
 
             </div>
         </div>
-        <div class="row app-row" id="quote">
+        <div class="row .bg-light" id="quote">
             <blockquote class="blockquote text-center">
                 <hr>
                 <p class="lead">"Hi, my name is Alexandre and I'm a process engineer, borned in Brazil, 35 years ago. In 2019, I've moved to Houston-TX. Over the last months, I've been working in some projects to increase my Python skills and capabilities. </p>

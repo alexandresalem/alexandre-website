@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import json
+
+try:
+    with open('/etc/config.json') as config_file:
+        config = json.load(config_file)
+except:
+    config = None
+
 
 AUTH_USER_MODEL = 'kineret.MyUser'
 
@@ -23,14 +31,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
+SECRET_KEY = config['SECRET_KEY'] if config else 'changeme'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = bool(int(os.environ.get('DEBUG', 0)))
+DEBUG = config['DEBUG'] if config else True
 
 ALLOWED_HOSTS = []
-ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS_ENV = config['ALLOWED_HOSTS'] if config else None
+
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
 
@@ -90,35 +99,17 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 
 
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE" : "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'db',
-#         'PORT': 5432,
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "mydb",
-        "USER": "alexandredb",
-        "PASSWORD": "abuabu444",
-        "HOST": "localhost",
-        "PORT": "",
+        "ENGINE": config['DB_ENGINE'] if config else "django.db.backends.sqlite3",
+        "NAME": config['DB_NAME'] if config else "db.sqlite3",
+        "USER": config['DB_USER'] if config else "",
+        "PASSWORD": config['DB_PASSWORD'] if config else "",
+        "HOST": config['DB_HOST'] if config else "",
+        "PORT": config['DB_PORT'] if config else "",
+
     }
 }
-
 
 
 # Password validation
@@ -148,14 +139,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = "/static/"
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(BASE_DIR, "alexandre-website", "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-print(STATIC_ROOT)
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "alexandre-website", "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-STRIPE_API_KEY = "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ"
+STRIPE_API_KEY = config['STRIPE_API_KEY'] if config else "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ"
 
 GAMEF1_CONSTRUCTOR_MODEL = 'gamef1/models/model_constructors-2010-2020'

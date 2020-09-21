@@ -47,15 +47,6 @@ input[type=radio] {
     padding-top:30px;
 }
 
-.app-container{
-    margin-left:40px;
-    margin-right:40px;
-    padding-bottom: 10px;
-
-}
-
-
-
 .app-thumb{
     margin-left:auto;
     margin-right:auto;
@@ -71,14 +62,6 @@ input[type=radio] {
 
 .app-thumb:hover{
     opacity:0.5;
-}
-
-
-.app-container{
-    background-color:white;
-    padding:30px;
-    margin-left:auto;
-    margin-right:auto;
 }
 
 h1.display-3{
@@ -125,11 +108,6 @@ input.btn btn-primary my-1{
     text-align:center;
 }
 
-.app-container.h4{
-    text-align:center;
-    padding-bottom:10px;
-    background-color:white;
-}
 .flag{
     max-width:50%;
     margin-left:auto;
