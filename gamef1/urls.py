@@ -5,8 +5,9 @@ from django.conf.urls.static import static
 
 app_name = "gamef1"
 urlpatterns = [
-    path('', views.F1PredictionView.as_view(), name='home'),
-    path('<int:pk>/result/', views.F1PredictionResultView.as_view(), name='result')
+    path('', views.F1InputView.as_view(), name='home'),
+    path('<int:pk>/prediction/', views.F1PredictionView.as_view(), name='prediction'),
+    path('results/', views.F1ResultsView.as_view(), name='results')
 ]
 
 if settings.DEBUG:

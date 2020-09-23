@@ -27,7 +27,6 @@ def load_model(team=None):
         loaded_model.load_weights(storage.path(f"{GAMEF1_CONSTRUCTOR_MODEL}.h5"))
     else:
         loaded_model.load_weights(storage.path(f"{GAMEF1_CONSTRUCTOR_MODEL}-{team}.h5"))
-    print("Loaded model from disk")
 
     return loaded_model
 

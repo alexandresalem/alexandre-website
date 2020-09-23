@@ -1,24 +1,24 @@
 from django.urls import reverse
-from django.views.generic import CreateView, UpdateView
-
+from django.views.generic import CreateView, UpdateView, TemplateView
+from django.db.models import Avg
 from .forms import *
 from .tasks import predict, populate_model
 
 
-class F1PredictionView(CreateView):
+class F1InputView(CreateView):
     model = F1Prediction
     fields = ['image']
     template_name = 'gamef1/home.html'
 
     def get_success_url(self):
-        return reverse('gamef1:result',
+        return reverse('gamef1:prediction',
                        kwargs={'pk': self.object.pk})
 
 
-class F1PredictionResultView(UpdateView):
+class F1PredictionView(UpdateView):
     model = F1Prediction
     form_class = F1PredictionResultForm
-    template_name = 'gamef1/result.html'
+    template_name = 'gamef1/prediction.html'
 
     def form_valid(self, form, **kwargs):
         results = []
@@ -39,5 +39,19 @@ class F1PredictionResultView(UpdateView):
         return context
 
     def get_success_url(self):
-        return reverse('gamef1:home')
+        return reverse('gamef1:results')
 
+
+class F1ResultsView(TemplateView):
+    template_name = 'gamef1/results.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(F1ResultsView, self).get_context_data()
+        last_game = F1Prediction.objects.last()
+        average = F1Prediction.objects.aggregate(Avg('position'))
+        average = 100 + (average.get('position__avg') - 1) * -10
+        context.update({
+            'object': last_game,
+            'average': average
+        })
+        return context

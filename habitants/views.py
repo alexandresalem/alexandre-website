@@ -51,4 +51,4 @@ def result(request):
 
 
 
-    return render(request, 'habitants/result.html', context)
+    return render(request, 'habitants/prediction.html', context)

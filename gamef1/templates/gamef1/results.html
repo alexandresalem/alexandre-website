@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% load static addcss %}
+
+{% block content %}
+
+    <div class="row app-row">
+        <div class="col"><h3 id="gamef1-title" class="text-center">Thanks for Playing!</h3></div>
+    </div>
+    <div class="row app-gamef1-container app-row" id="app-gamef1-container-1">
+        <div class="col">
+            <p class="text-center">The right answer was in the {{object.position}}º position.</p>
+            <p class="text-center">Algorithm Current Accuracy:</p>
+            <h1 class="text-center">{{average|floatformat:"1"}}%</h1>
+            <a href="{% url 'gamef1:home' %}"><p class="text-center py-3">Wanna play again?</p></a>
+        </div>
+    </div>
+
+{% endblock %}

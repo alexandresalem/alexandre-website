@@ -18,7 +18,7 @@ class BabyFormView(FormView):
 
 
 class BabyResultView(TemplateView):
-    template_name = "babysize/result.html"
+    template_name = "babysize/prediction.html"
 
     def get_context_data(self, **kwargs):
         context = {k: v for k, v in self.request.GET.items()}
