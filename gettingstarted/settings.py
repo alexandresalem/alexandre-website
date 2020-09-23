@@ -146,4 +146,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STRIPE_API_KEY = config['STRIPE_API_KEY'] if config else "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ"
 
-GAMEF1_CONSTRUCTOR_MODEL = 'gamef1/models/model_constructors-2010-2020'
+GAMEF1_CONSTRUCTOR_MODEL = 'gamef1/models/model_constructors-1990-2020'
