@@ -11,14 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import json
-
-try:
-    with open('/etc/config.json') as config_file:
-        config = json.load(config_file)
-except:
-    config = None
-
 
 AUTH_USER_MODEL = 'kineret.MyUser'
 
@@ -31,14 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config['SECRET_KEY'] if config else 'changeme'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = config['DEBUG'] if config else True
+DEBUG = os.environ.get('DEBUG', True)
 
 ALLOWED_HOSTS = []
-ALLOWED_HOSTS_ENV = config['ALLOWED_HOSTS'] if config else None
+ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
@@ -101,12 +93,12 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": config['DB_ENGINE'] if config else "django.db.backends.sqlite3",
-        "NAME": config['DB_NAME'] if config else "db.sqlite3",
-        "USER": config['DB_USER'] if config else "",
-        "PASSWORD": config['DB_PASSWORD'] if config else "",
-        "HOST": config['DB_HOST'] if config else "",
-        "PORT": config['DB_PORT'] if config else "",
+        "ENGINE": os.environ.get('DB_ENGINE', "django.db.backends.sqlite3"),
+        "NAME": os.environ.get('DB_NAME', "db.sqlite3"),
+        "USER": os.environ.get('DB_USER', ""),
+        "PASSWORD": os.environ.get('DB_PASSWORD', ""),
+        "HOST": os.environ.get('DB_HOST', ""),
+        "PORT": os.environ.get('DB_PORT', ""),
 
     }
 }
@@ -144,6 +136,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-STRIPE_API_KEY = config['STRIPE_API_KEY'] if config else "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ"
+STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY', "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ")
 
 GAMEF1_CONSTRUCTOR_MODEL = 'gamef1/models/model_constructors-1990-2020'
