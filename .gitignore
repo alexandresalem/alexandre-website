@@ -1,6 +1,5 @@
 static/
 media/
-gettingstarted/.env
 db.sqlite3
 .idea/
 
