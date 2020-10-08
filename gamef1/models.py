@@ -14,6 +14,8 @@ class F1Prediction(models.Model):
     probability = models.FloatField(blank=True, null=True)
     position = models.PositiveIntegerField(blank=True, null=True)
 
+    cars = models.Manager()
+
     def __str__(self):
         return self.image.name
 
