@@ -47,8 +47,8 @@ class F1ResultsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(F1ResultsView, self).get_context_data()
-        last_game = F1Prediction.objects.last()
-        average = F1Prediction.objects.aggregate(Avg('position'))
+        last_game = F1Prediction.cars.last()
+        average = F1Prediction.cars.aggregate(Avg('position'))
         average = 100 + (average.get('position__avg') - 1) * -10
         context.update({
             'object': last_game,
