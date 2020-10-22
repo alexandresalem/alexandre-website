@@ -1,15 +1,9 @@
-import random
-
 import pandas as pd
-from django.core.files import storage
 from django.core.files.storage import FileSystemStorage
-# Create your views here.
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.urls import reverse
-from django.views import View
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView
 
+from f1pilot.utils import get_question
 from gettingstarted.settings import STATIC_ROOT, STATIC_URL
 
 static_storage = FileSystemStorage(location=STATIC_ROOT, base_url=STATIC_URL)
@@ -19,48 +13,39 @@ media_storage = FileSystemStorage()
 class F1Pilot(TemplateView):
     template_name = 'f1pilot/home.html'
 
-
-class F1PilotGame(TemplateView):
-    template_name = 'f1pilot/game.html'
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-        file = static_storage.path(f'f1pilot/questions.csv')
-        self.df = pd.read_csv(file)
-
-        questions = list(self.df.columns[3:].values)
-        answers = []
-        for question in questions:
-            answers.append(self.df[question].sum())
-        self.question_round = questions[answers.index(max(answers))]
-
     def post(self, request, **kwargs):
-        import ipdb; ipdb.set_trace()
+        if 'start' in self.request.POST:
+            file = static_storage.path('f1pilot/questions.csv')
+            df = pd.read_csv(file)
+            df.to_csv(media_storage.path('f1pilot/questions.csv'), index=False)
+            question_round, result = get_question(df)
+            context = {
+                'question_round': question_round
+            }
+            return render(request, 'f1pilot/game.html', context)
 
+        elif 'answer' in self.request.POST:
+            answer = self.request.POST['answer']
+            file = media_storage.path('f1pilot/questions.csv')
+            df = pd.read_csv(file)
 
+            if len(df) <= 1:
+                file = static_storage.path('f1pilot/questions.csv')
+                df = pd.read_csv(file)
+                df.to_csv(media_storage.path('f1pilot/questions.csv'), index=False)
+                question_round, result = get_question(df)
+                return render(request, 'f1pilot/game.html', {'question_round': question_round})
+            else:
+                question_round, result = get_question(df)
 
-        # if 'no' in request.POST:
-        #     df = self.df[self.df[self.question_round] == 0].drop(columns=[self.question_round])
-        # elif 'yes' in request.POST:
-        #     df = self.df[self.df[self.question_round] == 1].drop(columns=[self.question_round])
-        # elif 'dontknow' in request.POST:
-        #     df = self.df.drop(columns=[self.question_round])
+            if answer == 'No':
+                df = df[df[question_round] == 0].drop(columns=[question_round])
+            elif answer == 'Yes':
+                df = df[df[question_round] == 1].drop(columns=[question_round])
+            elif answer == "Don't Know":
+                df = df.drop(columns=[question_round])
 
-        # context = super().get_context_data(df=df)
-        #
-        # if len(df.index) == 1:
-        #     driver = df['Answer'].values[0]
-        #     context['question'] = f'The driver is {driver}'
-        #     return render(request, self.template_name, context)
-        # elif len(df.index) == 0:
-        #     df = pd.read_csv(self.file)
+            df.to_csv(media_storage.path('f1pilot/questions.csv'), index=False)
+            question_round, result = get_question(df)
 
-        return render(request, self.template_name, {'df': 'test'})
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        import ipdb; ipdb.set_trace()
-        context['question_round'] = self.question_round
-
-        return context
+            return render(request, 'f1pilot/game.html', {'question_round': question_round, 'result': result})
