@@ -17,7 +17,7 @@ class F1Pilot(TemplateView):
         if 'start' in self.request.POST:
             file = static_storage.path('f1pilot/questions.csv')
             df = pd.read_csv(file)
-            df.to_csv(media_storage.path('f1pilot/questions.csv'), index=False)
+            # df.to_csv(media_storage.path('f1pilot/questions.csv'), index=False)
             question_round, result = get_question(df)
             context = {
                 'question_round': question_round
