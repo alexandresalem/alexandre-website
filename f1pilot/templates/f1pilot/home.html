@@ -5,16 +5,12 @@
 
     <div class="row justify-content-center app-row">
         <div class="col text-center">
-                <h1>{{first_question}}</h1>
+            <h1>Click to start the game</h1>
         </div>
     </div>
     <div class="row justify-content-center app-row pb-5">
         <div class="col text-center">
-            <form id="form_f1pilot">
-                <input class="btn btn-danger" type="submit" value="No">
-                <input class="btn btn-warning" type="submit" value="Don't Know">
-                <input class="btn btn-success" type="submit" value="Yes">
-            </form>
+            <a class="btn btn-danger" href="{% url 'f1pilot:game' %}">Start Game</a>
         </div>
     </div>
 
