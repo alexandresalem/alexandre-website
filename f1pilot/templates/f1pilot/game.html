@@ -13,12 +13,16 @@
     <div class="row justify-content-center app-row pb-5">
         <div class="col text-center">
             <form id="form_f1pilot" method="post">
-                 {% csrf_token %}
-                <input class="btn btn-danger" type="submit" value="No" name="answer">
-                {% if not result %}
-                    <input class="btn btn-warning" type="submit" value="Don't Know" name="answer">
+                {% csrf_token %}
+                {% if question_round == "Congratulations!" %}
+                    <input class="btn btn-success" type="submit" value="Start another game" name="answer">
+                {% else %}
+                    <input class="btn btn-danger" type="submit" value="No" name="answer">
+                    {% if not result %}
+                        <input class="btn btn-warning" type="submit" value="Don't Know" name="answer">
+                    {% endif %}
+                    <input class="btn btn-success" type="submit" value="Yes" name="answer">
                 {% endif %}
-                <input class="btn btn-success" type="submit" value="Yes" name="answer">
             </form>
             {{answer}}
         </div>

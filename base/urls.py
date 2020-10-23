@@ -14,6 +14,7 @@ urlpatterns = [
     path('babysize/', include('babysize.urls',namespace='babysize')),
     path('jpmorgan/', include('jpmorgan.urls',namespace='jpmorgan')),
     path('kineret/', include('kineret.urls',namespace='kineret')),
+    path('mensalidade/', include('mensalidade.urls',namespace='mensalidade')),
 
 ]
 
