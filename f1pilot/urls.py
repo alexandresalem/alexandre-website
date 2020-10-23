@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 app_name = "f1pilot"
 urlpatterns = [
     path('', views.F1PilotView.as_view(), name='home'),
+    path('game/', views.F1PilotGameView.as_view(), name='game'),
 ]
 
 if settings.DEBUG:
