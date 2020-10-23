@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 app_name = "f1pilot"
 urlpatterns = [
-    path(r'^$', views.f1pilot, name='home'),
+    path('', views.f1pilot, name='home'),
 ]
 
 if settings.DEBUG:

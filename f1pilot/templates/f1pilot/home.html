@@ -10,7 +10,7 @@
     </div>
     <div class="row justify-content-center app-row pb-5">
         <div class="col text-center">
-            <form id="form_f1pilot" method="post">
+            <form id="form_f1pilot" method="post" enctype="multipart/form-data" >
                 {% csrf_token %}
                 <input type="submit" class="btn btn-danger" value="Start Game" name="start" action="startee">
             </form>
