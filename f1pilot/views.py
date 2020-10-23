@@ -7,7 +7,7 @@ from f1pilot.utils import get_question
 from gettingstarted.settings import STATIC_ROOT, STATIC_URL
 
 static_storage = FileSystemStorage(location=STATIC_ROOT, base_url=STATIC_URL)
-media_storage = FileSystemStorage()
+media_storage = FileSystemStorage(location=STATIC_ROOT, base_url=STATIC_URL)
 
 
 def f1pilot(request):
