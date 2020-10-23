@@ -11,8 +11,7 @@
     <div class="row justify-content-center app-row pb-5">
         <div class="col text-center">
             <form id="form_f1pilot" method="post" enctype="multipart/form-data" >
-                {% csrf_token %}
-                <button type="submit" class="btn btn-success">Start Game</button>
+                <a href="{% url 'f1pilot:game' %}" class="btn btn-success">Start Game</a>
             </form>
         </div>
     </div>
