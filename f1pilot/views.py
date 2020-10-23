@@ -1,5 +1,6 @@
 import pandas as pd
 from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView, FormView
 
@@ -13,7 +14,7 @@ media_storage = FileSystemStorage()
 def f1pilot(request):
 
     if request.method == "POST":
-        return render(request, 'f1pilot/game.html')
+        return HttpResponse('result')
 
         # if 'start' in request.POST:
         #     sheet = static_storage.path('f1pilot/questions.csv')
@@ -58,5 +59,5 @@ def f1pilot(request):
         #     question_round, result = get_question(df)
         #
         #     return render(request, 'f1pilot/game.html', {'question_round': question_round, 'result': result})
-    # 
+    #
     # return render(request, 'f1pilot/home.html')
