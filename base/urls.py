@@ -20,14 +20,3 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns = [
-    url(r'^profile_update/$', views.profile_update, name="profile_update"),
-    url(r'^profile_update/$', views.profile_update, name="profile_update"),
-    url(r'^(?P<slug>[-\w]+)/update/$', views.EventProfileUpdateView.as_view(), name='event_profile_update'),
-    url(r'^(?P<slug>[-\w]+)/update/$', views.EventProfileUpdateView.as_view(), name='event_profile_update'),
-]
-urlpatterns = [
-    url(r'^(?P<slug>[-\w]+)/update/$', views.EventProfileUpdateView.as_view(), name='event_profile_update'),
-    url(r'^profile_update/$', views.profile_update, name="profile_update"),
-]
