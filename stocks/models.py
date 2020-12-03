@@ -12,7 +12,7 @@ class Company(models.Model):
         verbose_name_plural = "companies"
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.symbol}-{self.name}'
 
 
 class Article(models.Model):
