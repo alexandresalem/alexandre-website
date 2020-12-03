@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block extra-head %}
+{{ form.media.css }}
+{% endblock %}
+{% block content %}
+
+    <div class="row justify-content-center app-row">
+        <div class="col text-center">
+            <h1>Click to start the game</h1>
+            <form action="{% url 'stocks:results' %}" method="get" class="py-5">
+                {{form.as_p}}
+
+                <button type="submit">Search</button>
+
+            </form>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            {{ form.media.js }}
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block under-js %}
+
+{% endblock %}

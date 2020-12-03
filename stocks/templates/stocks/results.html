@@ -1,0 +1,134 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block extra-head %}
+{{ form.media.css }}
+{% endblock %}
+
+{% block upper-js %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="row app-row">
+    <div class="col mx-4">
+        <h1 class="stock font-weight-bold">{{company.symbol}} - {{company.name}}</h1>
+    </div>
+</div>
+<div class="row app-row">
+    <div class="col mx-4">
+        <p class="my-0 stock-period font-weight-bold">Today's Price</p>
+        <p class="my-0">
+            <span class="stock-today font-weight-bold">U$ {{stock_price.current_price}}</span>
+        </p>
+        <p class="my-0 stock-date">{{stock_price.current_price_time}} EST</p>
+    </div>
+    <div class="col mx-4">
+        <p class="my-0 stock-period font-weight-bold">Last Quarter</p>
+        <p class="my-0"><span class="stock-today font-weight-bold">U$ {{stock_price.last_quarter_price}}</span>
+        {% if stock_price.last_quarter_var >= 0 %}
+            <span class="text-success pl-2 font-weight-bold">{{stock_price.last_quarter_var}}%</span>
+        {% else %}
+            <span class="text-danger pl-2 font-weight-bold">{{stock_price.last_quarter_var}}%</span>
+        {% endif %}
+        </p>
+        <p class="my-0 stock-date">{{stock_price.last_quarter_date}}</p>
+    </div>
+    <div class="col mx-4">
+        <p class="my-0 stock-period font-weight-bold">Last Semester</p>
+        <p class="my-0"><span class="stock-today font-weight-bold">U$ {{stock_price.last_semester_price}}</span>
+        {% if stock_price.last_semester_var >= 0 %}
+            <span class="text-success pl-2 font-weight-bold">{{stock_price.last_semester_var}}%</span>
+        {% else %}
+            <span class="text-danger pl-2 font-weight-bold">{{stock_price.last_semester_var}}%</span>
+        {% endif %}
+        </p>
+        <p class="my-0 stock-date">{{stock_price.last_semester_date}}</p>
+    </div>
+    <div class="col mx-4">
+        <p class="my-0 stock-period font-weight-bold">Last Year</p>
+        <p class="my-0"><span class="stock-today font-weight-bold">U$ {{stock_price.last_year_price}}</span>
+        {% if stock_price.last_year_var >= 0 %}
+            <span class="text-success pl-2 font-weight-bold">{{stock_price.last_year_var}}%</span>
+        {% else %}
+            <span class="text-danger pl-2 font-weight-bold">{{stock_price.last_year_var}}%</span>
+        {% endif %}
+        </p>
+        <p class="my-0 stock-date">{{stock_price.last_year_date}}</p>
+    </div>
+</div>
+
+<div class="row app-row">
+    <div class="col text-center">
+        <canvas id="myChart"></canvas>
+
+    </div>
+</div>
+
+<div class="row justify-content-center app-row">
+    <div class="col text-center">
+        <form action="{% url 'stocks:results' %}" method="get" class="py-5">
+            {{form.as_p}}
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="row justify-content-center app-row">
+    <div class="col text-center table-responsive">
+        <table class="table table-hover">
+            <tbody>
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Latest News</th>
+                        <th scope="col">Sentiment Analysis</th>
+                    </tr>
+                </thead>
+                {% for new in news %}
+                <tr>
+                    <td class="align-middle">{{new.0}}</td>
+                    <td class="align-middle text-left text-truncate"><a class="" href="{{new.2}}">{{new.1}}</a></td>
+                    <td class="align-middle">Positive</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{stock_price.labels|safe}},
+        datasets: [{
+            label: '{{company}}',
+            data: {{stock_price.data}},
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+{% endblock %}
+
+
+{% block under-js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{ form.media.js }}
+{% endblock %}

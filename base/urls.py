@@ -12,9 +12,11 @@ urlpatterns = [
     path('gamef1/', include('gamef1.urls',namespace='gamef1')),
     path('f1_pilot/', include('f1pilot.urls',namespace='f1pilot')),
     path('babysize/', include('babysize.urls',namespace='babysize')),
+    path('stocks/', include('stocks.urls',namespace='stocks')),
     path('jpmorgan/', include('jpmorgan.urls',namespace='jpmorgan')),
     path('kineret/', include('kineret.urls',namespace='kineret')),
     path('mensalidade/', include('mensalidade.urls',namespace='mensalidade')),
+    path("select2/", include("django_select2.urls")),
 
 ]
 

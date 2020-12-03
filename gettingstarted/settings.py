@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'gamef1',
     'f1pilot',
     'kineret',
+    'stocks',
+    'django_select2',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY', "pk_test_51HMlyrFHy6lOMvj4C4tva2o7YFmO5BuWXv9pctKVNUAC9S92YR2aenbAwankFl2sI2w4F4QqnF6Xj78FjqxvzJCJ00htCIHloJ")
 
 GAMEF1_CONSTRUCTOR_MODEL = 'gamef1/models/model_constructors-1990-2020'
+
+FIXTURE_DIRS = [os.path.join(BASE_DIR, 'scripts'), ]
+
+SELECT2_JS = 'base/css/select2.min.js'
+SELECT2_CSS = 'base/css/select2.min.css'
+SELECT2_WIDTH = '100%'
